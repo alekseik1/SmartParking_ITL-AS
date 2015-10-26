@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tim.smartparking"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" >
+    </uses-feature>
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light" >
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBhZRNXmEdJPE6F0SGQ_3idhRCF9nCTloE" >
+        </meta-data>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" >
+        </meta-data>
+
+        <activity
+            android:name="com.tim.smartparking.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="Main" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.SplashScreen"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.RunActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.SPMapActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.ChelniParks"
+            android:label="@string/title_activity_chelni_parks" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.KazanParks"
+            android:label="@string/title_activity_kazan_parks" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="KazanParks" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.Kruiz"
+            android:label="@string/title_activity_kruiz" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.Garag500"
+            android:label="@string/title_activity_garag500" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.Kolco"
+            android:label="@string/title_activity_kolco" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.Chistopolskaya"
+            android:label="@string/title_activity_chistopolskaya" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.Oplata"
+            android:label="@string/title_activity_oplata" >
+        </activity>
+        <activity android:name="com.tim.smartparking.ServerOplata" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.ServerTest"
+            android:label="@string/title_activity_server_test"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <service
+            android:name="com.tim.smartparking.MyService"
+            android:process=":myservice" >
+        </service>
+
+        <activity android:name="com.tim.smartparking.BeaconMap" >
+        </activity>
+        <activity android:name="com.tim.smartparking.ListBeaconsActivity" >
+        </activity>
+        <activity android:name="com.tim.smartparking.GoogleMapView" >
+        </activity>
+
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity android:name="com.tim.smartparking.GooglePlaceActivity" >
+        </activity>
+        <activity
+            android:name="com.tim.smartparking.PlacesMapActivity"
+            android:label="Near Places Map View" >
+        </activity>
+        <activity android:name="com.tim.smartparking.SinglePlaceActivity" >
+        </activity>
+        <activity android:name="com.tim.smartparking.MyLocationActivity" >
+        </activity>
+    </application>
+
+</manifest>
