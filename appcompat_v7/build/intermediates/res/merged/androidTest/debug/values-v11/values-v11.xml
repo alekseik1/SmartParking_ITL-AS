@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/appcompat_v7/build/intermediates/bundles/debug/res/values-v11/values-v11.xml -->
+    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/values-v11/values-v11.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat.Inverse">
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>

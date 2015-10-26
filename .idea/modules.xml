@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SmartParking/SmartParking.iml" filepath="$PROJECT_DIR$/SmartParking/SmartParking.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SmartParking_ITL-master.iml" filepath="$PROJECT_DIR$/SmartParking_ITL-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartParking_ITL-AS.iml" filepath="$PROJECT_DIR$/SmartParking_ITL-AS.iml" />
       <module fileurl="file://$PROJECT_DIR$/appcompat_v7/appcompat_v7.iml" filepath="$PROJECT_DIR$/appcompat_v7/appcompat_v7.iml" />
       <module fileurl="file://$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" />
     </modules>

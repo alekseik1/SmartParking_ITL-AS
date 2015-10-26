@@ -6,4 +6,4 @@
         android:icon="@android:drawable/ic_menu_add"
         sabd:showAsAction="always" />
 </menu> 
-<!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/SmartParking/res/menu/main.xml -->
+<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/res/menu/main.xml -->

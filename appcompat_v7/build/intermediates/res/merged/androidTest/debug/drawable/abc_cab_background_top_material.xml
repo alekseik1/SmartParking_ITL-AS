@@ -18,4 +18,4 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@android:color/white"/>
 </shape>
-<!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/appcompat_v7/res/drawable/abc_cab_background_top_material.xml --><!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/appcompat_v7/build/intermediates/bundles/debug/res/drawable/abc_cab_background_top_material.xml -->
+<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/res/drawable/abc_cab_background_top_material.xml --><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/drawable/abc_cab_background_top_material.xml -->

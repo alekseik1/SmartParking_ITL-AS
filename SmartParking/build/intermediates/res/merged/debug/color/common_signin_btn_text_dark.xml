@@ -16,4 +16,4 @@
     <item
         android:color="@color/common_signin_btn_dark_text_default" />
 </selector>
-<!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/google-play-services_lib/res/color/common_signin_btn_text_dark.xml --><!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/SmartParking/build/intermediates/exploded-aar/SmartParking_ITL-master/google-play-services_lib/unspecified/res/color/common_signin_btn_text_dark.xml -->
+<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/google-play-services_lib/res/color/common_signin_btn_text_dark.xml --><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/build/intermediates/exploded-aar/SmartParking_ITL-AS/google-play-services_lib/unspecified/res/color/common_signin_btn_text_dark.xml -->

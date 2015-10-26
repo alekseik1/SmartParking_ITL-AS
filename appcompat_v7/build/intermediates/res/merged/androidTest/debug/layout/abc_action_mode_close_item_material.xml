@@ -23,4 +23,4 @@
              android:src="?attr/actionModeCloseDrawable"
              style="?attr/actionModeCloseButtonStyle"
              android:layout_width="wrap_content"
-             android:layout_height="match_parent" /><!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/appcompat_v7/res/layout/abc_action_mode_close_item_material.xml --><!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/appcompat_v7/build/intermediates/bundles/debug/res/layout/abc_action_mode_close_item_material.xml -->
+             android:layout_height="match_parent" /><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/res/layout/abc_action_mode_close_item_material.xml --><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/layout/abc_action_mode_close_item_material.xml -->

@@ -7,4 +7,4 @@
     <item android:state_selected="true" android:color="@color/wallet_bright_foreground_holo_light"/>
     <item android:color="@color/wallet_bright_foreground_holo_light"/> <!-- not selected -->
 </selector>
-<!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/google-play-services_lib/res/color/wallet_primary_text_holo_light.xml --><!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/SmartParking/build/intermediates/exploded-aar/SmartParking_ITL-master/google-play-services_lib/unspecified/res/color/wallet_primary_text_holo_light.xml -->
+<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/google-play-services_lib/res/color/wallet_primary_text_holo_light.xml --><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/build/intermediates/exploded-aar/SmartParking_ITL-AS/google-play-services_lib/unspecified/res/color/wallet_primary_text_holo_light.xml -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/aleksei/workspace/SmartParking_ITL-master/SmartParking/res/values-en/strings.xml -->
+    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/res/values-en/strings.xml -->
     <eat-comment/>
     <string-array name="ChelniParks">
         <item>Choose a parking lot</item>
