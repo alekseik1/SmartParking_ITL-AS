@@ -28,7 +28,7 @@ public class GooglePlaces {
 	private static final String PLACES_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?";
 	private static final String PLACES_TEXT_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?";
 	private static final String PLACES_DETAILS_URL = "https://maps.googleapis.com/maps/api/place/details/json?";
-
+	// For test only
 	private double _latitude;
 	private double _longitude;
 	private double _radius;
