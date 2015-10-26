@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 	static AlertDialog.Builder ad; // Нужно
 	static int act = 0; // Какой активити открыть1`
 	static AlertDialog ald1, ald2, ald3; // ald3 - internet; ald2 - wait; ald1 -
-											// no GPS
+				//test							// no GPS
 	static Geocoder g; // Превращает координаты в название города
 	static String myTown; // В эту строку будет записан город, например,
 							// "Уруссу"
