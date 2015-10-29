@@ -1,11 +1,5 @@
 package com.tim.smartparking;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Notification;
@@ -28,6 +22,12 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class ServerTest extends Activity implements OnTouchListener {
 	
@@ -67,19 +67,33 @@ public class ServerTest extends Activity implements OnTouchListener {
 			  }
 
 			  if(s.charAt(i) == '1') {
-				  ((TextView)rl.getChildAt(v)).setBackgroundResource(R.drawable.redcar);
-			  } else{
-				  ((TextView)rl.getChildAt(v)).setBackgroundResource(R.drawable.greencar);
-			  }
+                  try {
+                      ((TextView)rl.getChildAt(v)).setBackgroundResource(R.drawable.redcar);
+                  } catch (NullPointerException e) {
+                  }
+              } else{
+                  try {
+                      ((TextView)rl.getChildAt(v)).setBackgroundResource(R.drawable.greencar);
+                  } catch (NullPointerException e) {
+                  }
+              }
 			  i++;
 			  
 			  
 		  }
-		  ((TextView)findViewById(R.id.hel)).setBackgroundResource(R.drawable.redcar);
-		  
-		  if(id!=-1)
-			  ((TextView)findViewById(id)).setBackgroundResource(R.drawable.bluecar);
-	  }
+          try {
+              ((TextView)findViewById(R.id.hel)).setBackgroundResource(R.drawable.redcar);
+          } catch (Exception e) {
+              e.printStackTrace();
+          }
+
+          if(id!=-1)
+              try {
+                  ((TextView)findViewById(id)).setBackgroundResource(R.drawable.bluecar);
+              } catch (Exception e) {
+                  e.printStackTrace();
+              }
+      }
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +132,7 @@ public class ServerTest extends Activity implements OnTouchListener {
 		
 		
 		SharedPreferences storage = this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
-		final String name = storage.getString("name", "Me");
+		final String name = storage.getString("name", "Malik");
 		id = storage.getInt("id", -1);
 		Log.e("eclipse", "eclispe");
 		
@@ -143,14 +157,25 @@ public class ServerTest extends Activity implements OnTouchListener {
 				        int hd = storage.getInt("id", -1);
 				        if(hd!=-1)
 				        {
-				        	((TextView)findViewById(hd)).setText("");
-				        }
+
+							try {
+								((TextView)findViewById(hd)).setText("");
+							} catch (NullPointerException e) {
+							}
+						}
 				        editor.putInt("id", v.getId());
 				        id = v.getId();
 				        editor.commit();
-				        v.setBackgroundResource(R.drawable.bluecar);
-				        ((TextView)v).setText(name);
-				        Toast.makeText(ServerTest.this, "Saved", Toast.LENGTH_SHORT).show();
+                        try {
+                            v.setBackgroundResource(R.drawable.bluecar);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        try {
+							((TextView)v).setText(name);
+						} catch (NullPointerException e) {
+						}
+						Toast.makeText(ServerTest.this, "Saved", Toast.LENGTH_SHORT).show();
 				        Notification.Builder nb = new Notification.Builder(getApplicationContext());
 				        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 				        nm.cancel(5);
@@ -172,10 +197,18 @@ public class ServerTest extends Activity implements OnTouchListener {
 		
 		if(id!=-1)
 		{
-			((TextView)findViewById(id)).setBackgroundResource(R.drawable.bluecar);
-			((TextView)findViewById(id)).setText(name);
-			
-	        SharedPreferences storage1 = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+            try {
+                ((TextView)findViewById(id)).setBackgroundResource(R.drawable.bluecar);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+				((TextView)findViewById(id)).setText(name);
+			} catch (NullPointerException e) {
+				e.printStackTrace();
+			}
+
+			SharedPreferences storage1 = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
 			LayoutParams lp = new LayoutParams(((TextView)findViewById(R.id.hel)).getLayoutParams());
 			lp.leftMargin = (int) storage1.getInt("x", 0);
 			lp.topMargin = (int) storage1.getInt("y", 0);

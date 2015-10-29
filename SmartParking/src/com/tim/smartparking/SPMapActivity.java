@@ -47,9 +47,15 @@ public class SPMapActivity extends Activity {
 		int i;
 		for (i = 0; i <= s.length() - 1; i++) {
 			if (s.charAt(i) == '1') {
-				ivCar[i].setBackgroundResource(R.drawable.redcar);
+				try {
+					ivCar[i].setBackgroundResource(R.drawable.redcar);
+				} catch (NullPointerException e) {
+				}
 			} else if (s.charAt(i) == '2') {
-				ivCar[i].setBackgroundResource(R.drawable.greencar);
+				try {
+					ivCar[i].setBackgroundResource(R.drawable.greencar);
+				} catch (NullPointerException e) {
+				}
 			}
 		}
 	}
