@@ -41,7 +41,7 @@ public class Kolco extends Activity implements OnClickListener {
 			startActivity(intent); 
 			finish();
 		} else if(v.getId() == R.id.button1) {
-			String geoUriString = "geo:0,0?q=ТЦ Кольцо Казань&z=8";
+			String geoUriString = "geo:0,0?q=РўР¦ РљРѕР»СЊС†Рѕ РљР°Р·Р°РЅСЊ&z=8";
 	    	Uri geo = Uri.parse(geoUriString);
 	    	Intent geoMap = new Intent(Intent.ACTION_VIEW, geo);
 	    	startActivity(geoMap);

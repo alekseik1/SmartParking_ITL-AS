@@ -33,7 +33,7 @@ public class Kruiz extends Activity implements OnClickListener {
 
 	public void onClick(View v) {
 		if(v.getId() == R.id.button1) {
-		String geoUriString = "geo:0,0?q=Автостоянка Круиз&z=8";
+		String geoUriString = "geo:0,0?q=РђРІС‚РѕСЃС‚РѕСЏРЅРєР° РљСЂСѓРёР·&z=8";
     	Uri geo = Uri.parse(geoUriString);
     	Intent geoMap = new Intent(Intent.ACTION_VIEW, geo);
     	startActivity(geoMap);

@@ -1,9 +1,5 @@
 package com.tim.smartparking;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,6 +9,10 @@ import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class SinglePlaceActivity extends Activity {
 	// flag for Internet connection status
 	Boolean isInternetPresent = false;
@@ -20,7 +20,7 @@ public class SinglePlaceActivity extends Activity {
 	// Connection detector class
 	ConnectionDetector cd;
 	
-	// В stackoverflow посоветовали так сделать
+	// Р’ stackoverflow РїРѕСЃРѕРІРµС‚РѕРІР°Р»Рё С‚Р°Рє СЃРґРµР»Р°С‚СЊ
 	String routeDistance;
 	
 	// Alert Dialog Manager

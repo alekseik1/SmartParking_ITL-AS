@@ -181,7 +181,7 @@ public class ServerTest extends Activity implements OnTouchListener {
 				        nm.cancel(5);
 				        nb.setOngoing(true)
 				          .setSmallIcon(R.drawable.ic_launcher)
-				          .setContentText("Вы припарковались на месте "+ v.getTag())
+				          .setContentText("Р’С‹ РїСЂРёРїР°СЂРєРѕРІР°Р»РёСЃСЊ РЅР° РјРµСЃС‚Рµ "+ v.getTag())
 				          .setContentTitle("Smart Parking")
 				          .setWhen(System.currentTimeMillis())
 				          .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), ServerTest.class), PendingIntent.FLAG_UPDATE_CURRENT));

@@ -26,8 +26,8 @@ public class MyLocationActivity extends Activity implements LocationListener
     {
        if (location != null) 
        {
-          Log.d(TAG, "Широта="+location.getLatitude());
-          Log.d(TAG, "Долгота="+location.getLongitude());
+          Log.d(TAG, "РЁРёСЂРѕС‚Р°="+location.getLatitude());
+          Log.d(TAG, "Р”РѕР»РіРѕС‚Р°="+location.getLongitude());
        }
     }
 

@@ -1,12 +1,5 @@
 package com.tim.smartparking;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -23,6 +16,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class GooglePlaceActivity extends Activity {
@@ -362,7 +362,7 @@ public class GooglePlaceActivity extends Activity {
 									Log.d("Distance Link : ", routeDistance);
 								}
 								else{
-									Log.d("Distance Link : ", "код говно");
+									Log.d("Distance Link : ", "РєРѕРґ РіРѕРІРЅРѕ");
 								}
 								
 								Log.d("Place ", name + address + phone + latitude + longitude);

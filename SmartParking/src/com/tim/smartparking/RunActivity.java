@@ -14,7 +14,7 @@ import android.widget.Spinner;
 public class RunActivity extends Activity implements OnClickListener 
 { 
 	Button btnRead;
-	String[] data = {"Мега", "Южный", "Тандем"};
+	String[] data = {"РњРµРіР°", "Р®Р¶РЅС‹Р№", "РўР°РЅРґРµРј"};
 	  
     /** Called when the activity is first created. */
     @Override
@@ -24,22 +24,22 @@ public class RunActivity extends Activity implements OnClickListener
         btnRead = (Button) findViewById(R.id.btnRead);
         btnRead.setOnClickListener(this);
         
-        // адаптер
+        // Р°РґР°РїС‚РµСЂ
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(adapter);
-        // заголовок
-        spinner.setPrompt("Парковки");
-        // выделяем элемент 
+        // Р·Р°РіРѕР»РѕРІРѕРє
+        spinner.setPrompt("РџР°СЂРєРѕРІРєРё");
+        // РІС‹РґРµР»СЏРµРј СЌР»РµРјРµРЅС‚ 
         spinner.setSelection(2);
-        // устанавливаем обработчик нажатия
+        // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РѕР±СЂР°Р±РѕС‚С‡РёРє РЅР°Р¶Р°С‚РёСЏ
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
       @Override
       public void onItemSelected(AdapterView<?> parent, View view,
           int position, long id) {
-        // показываем позиция нажатого элемента
+        // РїРѕРєР°Р·С‹РІР°РµРј РїРѕР·РёС†РёСЏ РЅР°Р¶Р°С‚РѕРіРѕ СЌР»РµРјРµРЅС‚Р°
       }
       @Override
       public void onNothingSelected(AdapterView<?> arg0) {
