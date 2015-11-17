@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/SmartParking/build/intermediates/exploded-aar/SmartParking_ITL-AS/google-play-services_lib/unspecified/res/values-pt-rBR/values-pt-rBR.xml -->
+    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/build/intermediates/exploded-aar/SmartParking_ITL-AS/google-play-services_lib/unspecified/res/values-pt-rBR/values-pt-rBR.xml -->
     <eat-comment/>
     <string msgid="473679118463211576" name="common_android_wear_notification_needs_update_text">"Um app exige uma atualização do app Android Wear."</string>
     <string msgid="3046420540094071256" name="common_android_wear_update_text">"Este app só funciona com uma versão atualizada do app Android Wear."</string>

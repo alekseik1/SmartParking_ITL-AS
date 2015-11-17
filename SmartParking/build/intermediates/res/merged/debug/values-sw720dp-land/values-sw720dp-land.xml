@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/SmartParking/res/values-sw720dp-land/dimens.xml -->
+    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/res/values-sw720dp-land/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">128dp</dimen>
 </resources>

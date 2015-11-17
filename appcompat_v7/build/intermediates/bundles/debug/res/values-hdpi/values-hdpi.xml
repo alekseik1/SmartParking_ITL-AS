@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/res/values-hdpi/styles_base.xml -->
+    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/res/values-hdpi/styles_base.xml -->
     <eat-comment/>
     <style name="Base.Widget.AppCompat.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle.Common">
           <item name="barSize">18.66dp</item>

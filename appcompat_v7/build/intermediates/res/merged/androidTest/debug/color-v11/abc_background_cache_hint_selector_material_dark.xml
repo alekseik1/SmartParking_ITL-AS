@@ -18,4 +18,4 @@
     <item android:state_accelerated="false" android:color="@color/background_material_dark" />
     <item android:color="@android:color/transparent" />
 </selector>
-<!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/res/color-v11/abc_background_cache_hint_selector_material_dark.xml --><!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/color-v11/abc_background_cache_hint_selector_material_dark.xml -->
+<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/res/color-v11/abc_background_cache_hint_selector_material_dark.xml --><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/color-v11/abc_background_cache_hint_selector_material_dark.xml -->

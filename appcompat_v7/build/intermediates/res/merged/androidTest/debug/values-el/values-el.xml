@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/values-el/values-el.xml -->
+    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/values-el/values-el.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Πλοήγηση στην αρχική σελίδα"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Πλοήγηση προς τα επάνω"</string>

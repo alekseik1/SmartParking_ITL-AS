@@ -23,4 +23,4 @@
         android:visibility="gone"
         android:theme="?attr/actionBarTheme"
         style="?attr/actionModeStyle"/>
-<!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/res/layout/abc_action_mode_bar.xml -->
+<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/res/layout/abc_action_mode_bar.xml -->

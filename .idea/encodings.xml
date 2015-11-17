@@ -22,6 +22,7 @@
     <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/MyService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/PlacesMapActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/RunActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/SPMapActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ServerOplata.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ServerTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/SinglePlaceActivity.java" charset="UTF-8" />

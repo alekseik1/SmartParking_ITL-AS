@@ -28,7 +28,7 @@ public class SPMapActivity extends Activity {
 	SPImageView iv;
 
 	private static final int REQUEST_ENABLE_BT = 1;
-	final int RECIEVE_MESSAGE = 1; // Статус для Handler
+	final int RECIEVE_MESSAGE = 1; // РЎС‚Р°С‚СѓСЃ РґР»СЏ Handler
 	private BluetoothAdapter btAdapter = null;
 	private static ImageView[] ivCar = new ImageView[2];
 	private BluetoothSocket btSocket = null;
@@ -36,11 +36,11 @@ public class SPMapActivity extends Activity {
 
 	private ConnectedThread mConnectedThread;
 
-	// SPP UUID сервиса
+	// SPP UUID СЃРµСЂРІРёСЃР°
 	private static final UUID MY_UUID = UUID
 			.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-	// MAC-адрес Bluetooth модуля
+	// MAC-Р°РґСЂРµСЃ Bluetooth РјРѕРґСѓР»СЏ
 	private static String address = "20:13:06:03:05:81";
 
 	private static void setColorCars(String s) {
@@ -89,22 +89,22 @@ public class SPMapActivity extends Activity {
 		h = new Handler() {
 			public void handleMessage(android.os.Message msg) {
 				switch (msg.what) {
-				case RECIEVE_MESSAGE: // если приняли сообщение в Handler
+				case RECIEVE_MESSAGE: // РµСЃР»Рё РїСЂРёРЅСЏР»Рё СЃРѕРѕР±С‰РµРЅРёРµ РІ Handler
 					byte[] readBuf = (byte[]) msg.obj;
 					String strIncom = new String(readBuf, 0, msg.arg1);
-					sb.append(strIncom); // формируем строку
-					int endOfLineIndex = sb.indexOf("\r\n"); // определяем
-																// символы конца
-																// строки
-					if (endOfLineIndex > 0) { // если встречаем конец строки,
-						String sbprint = sb.substring(0, endOfLineIndex); // то
-																			// извлекаем
-																			// строку
-						sb.delete(0, sb.length()); // Дальше можно обрабатывать
-													// строку
-						// и очищаем sb
+					sb.append(strIncom); // С„РѕСЂРјРёСЂСѓРµРј СЃС‚СЂРѕРєСѓ
+					int endOfLineIndex = sb.indexOf("\r\n"); // РѕРїСЂРµРґРµР»СЏРµРј
+																// СЃРёРјРІРѕР»С‹ РєРѕРЅС†Р°
+																// СЃС‚СЂРѕРєРё
+					if (endOfLineIndex > 0) { // РµСЃР»Рё РІСЃС‚СЂРµС‡Р°РµРј РєРѕРЅРµС† СЃС‚СЂРѕРєРё,
+						String sbprint = sb.substring(0, endOfLineIndex); // С‚Рѕ
+																			// РёР·РІР»РµРєР°РµРј
+																			// СЃС‚СЂРѕРєСѓ
+						sb.delete(0, sb.length()); // Р”Р°Р»СЊС€Рµ РјРѕР¶РЅРѕ РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ
+													// СЃС‚СЂРѕРєСѓ
+						// Рё РѕС‡РёС‰Р°РµРј sb
 						setColorCars(sbprint);
-						// Log.d(TAG, "...Строка:"+ sb.toString() + "Байт:" +
+						// Log.d(TAG, "...РЎС‚СЂРѕРєР°:"+ sb.toString() + "Р‘Р°Р№С‚:" +
 						// msg.arg1 + "...");
 						break;
 					}
@@ -112,8 +112,8 @@ public class SPMapActivity extends Activity {
 			};
 		};
 
-		btAdapter = BluetoothAdapter.getDefaultAdapter(); // получаем локальный
-															// Bluetooth адаптер
+		btAdapter = BluetoothAdapter.getDefaultAdapter(); // РїРѕР»СѓС‡Р°РµРј Р»РѕРєР°Р»СЊРЅС‹Р№
+															// Bluetooth Р°РґР°РїС‚РµСЂ
 		checkBTState();
 
 	}
@@ -122,7 +122,7 @@ public class SPMapActivity extends Activity {
 	public void onResume() {
 		super.onResume();
 
-		Log.d(TAG, "...onResume - попытка соединения...");
+		Log.d(TAG, "...onResume - РїРѕРїС‹С‚РєР° СЃРѕРµРґРёРЅРµРЅРёСЏ...");
 
 		// Set up a pointer to the remote node using it's address.
 		BluetoothDevice device = btAdapter.getRemoteDevice(address);
@@ -143,11 +143,11 @@ public class SPMapActivity extends Activity {
 		btAdapter.cancelDiscovery();
 
 		// Establish the connection. This will block until it connects.
-		Log.d(TAG, "...Соединяемся...");
+		Log.d(TAG, "...РЎРѕРµРґРёРЅСЏРµРјСЃСЏ...");
 		try {
 			btSocket.connect();
 			Log.d(TAG,
-					"...Соединение установлено и готово к передачи данных...");
+					"...РЎРѕРµРґРёРЅРµРЅРёРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ Рё РіРѕС‚РѕРІРѕ Рє РїРµСЂРµРґР°С‡Рё РґР°РЅРЅС‹С…...");
 		} catch (IOException e) {
 			try {
 				btSocket.close();
@@ -159,7 +159,7 @@ public class SPMapActivity extends Activity {
 		}
 
 		// Create a data stream so we can talk to server.
-		Log.d(TAG, "...Создание Socket...");
+		Log.d(TAG, "...РЎРѕР·РґР°РЅРёРµ Socket...");
 
 		mConnectedThread = new ConnectedThread(btSocket);
 		mConnectedThread.start();
@@ -187,7 +187,7 @@ public class SPMapActivity extends Activity {
 			errorExit("Fatal Error", "Bluetooth not supported");
 		} else {
 			if (btAdapter.isEnabled()) {
-				Log.d(TAG, "...Bluetooth включен...");
+				Log.d(TAG, "...Bluetooth РІРєР»СЋС‡РµРЅ...");
 			} else {
 				// Prompt user to turn on Bluetooth
 				@SuppressWarnings("static-access")
@@ -230,12 +230,12 @@ public class SPMapActivity extends Activity {
 			while (true) {
 				try {
 					// Read from the InputStream
-					bytes = mmInStream.read(buffer); // Получаем кол-во байт и
-														// само собщение в
-														// байтовый массив
+					bytes = mmInStream.read(buffer); // РџРѕР»СѓС‡Р°РµРј РєРѕР»-РІРѕ Р±Р°Р№С‚ Рё
+														// СЃР°РјРѕ СЃРѕР±С‰РµРЅРёРµ РІ
+														// Р±Р°Р№С‚РѕРІС‹Р№ РјР°СЃСЃРёРІ
 														// "buffer"
 					h.obtainMessage(RECIEVE_MESSAGE, bytes, -1, buffer)
-							.sendToTarget(); // Отправляем в очередь сообщений
+							.sendToTarget(); // РћС‚РїСЂР°РІР»СЏРµРј РІ РѕС‡РµСЂРµРґСЊ СЃРѕРѕР±С‰РµРЅРёР№
 												// Handler
 				} catch (IOException e) {
 					break;
