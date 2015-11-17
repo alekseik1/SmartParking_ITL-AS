@@ -32,14 +32,14 @@ import java.io.IOException;
 public class MainActivity extends Activity {
 
 	Button btnFind;
-	static Spinner Spinner; // Спиннер
-	static AlertDialog.Builder ad; // Нужно
-	static int act = 0; // Какой активити открыть1`
+	static Spinner Spinner; // РЎРїРёРЅРЅРµСЂ
+	static AlertDialog.Builder ad; // РќСѓР¶РЅРѕ
+	static int act = 0; // РљР°РєРѕР№ Р°РєС‚РёРІРёС‚Рё РѕС‚РєСЂС‹С‚СЊ1`
 	static AlertDialog ald1, ald2, ald3; // ald3 - internet; ald2 - wait; ald1 -
 				//test							// no GPS
-	static Geocoder g; // Превращает координаты в название города
-	static String myTown; // В эту строку будет записан город, например,
-							// "Уруссу"
+	static Geocoder g; // РџСЂРµРІСЂР°С‰Р°РµС‚ РєРѕРѕСЂРґРёРЅР°С‚С‹ РІ РЅР°Р·РІР°РЅРёРµ РіРѕСЂРѕРґР°
+	static String myTown; // Р’ СЌС‚Сѓ СЃС‚СЂРѕРєСѓ Р±СѓРґРµС‚ Р·Р°РїРёСЃР°РЅ РіРѕСЂРѕРґ, РЅР°РїСЂРёРјРµСЂ,
+							// "РЈСЂСѓСЃСЃСѓ"
 	// public static IBeaconProtocol ibp;
 	public static LocationManager lm;
 	public static Location currLoc;
@@ -63,8 +63,8 @@ public class MainActivity extends Activity {
 		public void onProviderEnabled(String provider) {
 			// TODO Auto-generated method stub
 			if (ald1.isShowing())
-				ald1.cancel(); // Закрываем это меню, если пользователь включил
-								// GPS через шторку
+				ald1.cancel(); // Р—Р°РєСЂС‹РІР°РµРј СЌС‚Рѕ РјРµРЅСЋ, РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІРєР»СЋС‡РёР»
+								// GPS С‡РµСЂРµР· С€С‚РѕСЂРєСѓ
 		}
 
 		@Override
@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.main);
         
 		/*
-		 * // Тут инизиализируем поиск iBeacon ibp =
+		 * // РўСѓС‚ РёРЅРёР·РёР°Р»РёР·РёСЂСѓРµРј РїРѕРёСЃРє iBeacon ibp =
 		 * IBeaconProtocol.getInstance(this); ibp.setListener(new
 		 * IBeaconListener() {
 		 * 
@@ -124,15 +124,15 @@ public class MainActivity extends Activity {
 		 * 
 		 * });
 		 */
-		// Тут инициализируем геокодер и GPS-менеджер
+		// РўСѓС‚ РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РіРµРѕРєРѕРґРµСЂ Рё GPS-РјРµРЅРµРґР¶РµСЂ
 		g = new Geocoder(this);
 		lm = (LocationManager) getSystemService(LOCATION_SERVICE);
 
-		// Тут диалог, предлагающий найти тебя. Также тут предложение включить
+		// РўСѓС‚ РґРёР°Р»РѕРі, РїСЂРµРґР»Р°РіР°СЋС‰РёР№ РЅР°Р№С‚Рё С‚РµР±СЏ. РўР°РєР¶Рµ С‚СѓС‚ РїСЂРµРґР»РѕР¶РµРЅРёРµ РІРєР»СЋС‡РёС‚СЊ
 		// GPS
 		ad = new AlertDialog.Builder(this);
 
-		// Тут создаются AlertDialog'и
+		// РўСѓС‚ СЃРѕР·РґР°СЋС‚СЃСЏ AlertDialog'Рё
 		ad.setPositiveButton("", null);
 		ad.setNegativeButton("", null);
 		ad.setView((LinearLayout) getLayoutInflater().inflate(R.layout.alert_dialog, null));
@@ -153,7 +153,7 @@ public class MainActivity extends Activity {
 		}
 
 		ad.setMessage(R.string.dlg_find_me);
-		ad.setNeutralButton("Хорошо", new DialogInterface.OnClickListener() {
+		ad.setNeutralButton("РҐРѕСЂРѕС€Рѕ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -163,9 +163,9 @@ public class MainActivity extends Activity {
 		});
 		ald1 = ad.create();
 
-		ad.setTitle("Нет доступа в Интернет");
-		ad.setMessage("Для работы этой функции необходим доступ к интернету");
-		ad.setNeutralButton("Хорошо", new DialogInterface.OnClickListener() {
+		ad.setTitle("РќРµС‚ РґРѕСЃС‚СѓРїР° РІ РРЅС‚РµСЂРЅРµС‚");
+		ad.setMessage("Р”Р»СЏ СЂР°Р±РѕС‚С‹ СЌС‚РѕР№ С„СѓРЅРєС†РёРё РЅРµРѕР±С…РѕРґРёРј РґРѕСЃС‚СѓРї Рє РёРЅС‚РµСЂРЅРµС‚Сѓ");
+		ad.setNeutralButton("РҐРѕСЂРѕС€Рѕ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -181,15 +181,15 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				if (!lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) { // Если
-																				// выключен
+				if (!lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) { // Р•СЃР»Рё
+																				// РІС‹РєР»СЋС‡РµРЅ
 																				// GPS
 					
 					ald1.show();
 				} else {
 					if (!isOnline()) {
 						ald3.show();
-					} else { // Если включен GPS
+					} else { // Р•СЃР»Рё РІРєР»СЋС‡РµРЅ GPS
 						startGPS();
 						ft = new findTown();
 						ald2.show();
@@ -393,14 +393,14 @@ public class MainActivity extends Activity {
 			// TODO Auto-generated method stub
 			boolean break_c = true;
 			while (break_c) {
-				try { // Здесь определяется город и записывается в строку
+				try { // Р—РґРµСЃСЊ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ РіРѕСЂРѕРґ Рё Р·Р°РїРёСЃС‹РІР°РµС‚СЃСЏ РІ СЃС‚СЂРѕРєСѓ
 					myTown = findMyTown(g.getFromLocation(
 							currLoc.getLatitude(), currLoc.getLongitude(), 1)
 							.toString());
 
-					if (myTown.equals("Казань")) {
+					if (myTown.equals("РљР°Р·Р°РЅСЊ")) {
 						act = 2;
-					} else if (myTown.equals("Набережные Челны")) {
+					} else if (myTown.equals("РќР°Р±РµСЂРµР¶РЅС‹Рµ Р§РµР»РЅС‹")) {
 						act = 1;
 					} else {
 					}
