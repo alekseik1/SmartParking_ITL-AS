@@ -18,4 +18,4 @@
       android:visibility="gone"
       android:src="@drawable/dot"/>
 
-</FrameLayout><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/res/layout/distance_view.xml -->
+</FrameLayout><!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/SmartParking/res/layout/distance_view.xml -->

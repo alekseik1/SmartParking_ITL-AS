@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/res/values-v14/styles.xml -->
+    <!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/SmartParking/res/values-v14/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light"/>
-    <!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v14/values.xml -->
+    <!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/SmartParking/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v14/values.xml -->
     <eat-comment/>
     <style name="Base.Theme.AppCompat" parent="Base.V14.Theme.AppCompat">
         <item name="android:actionModeCutDrawable">?actionModeCutDrawable</item>

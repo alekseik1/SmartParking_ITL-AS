@@ -2,7 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/Kolco.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/MainActivity.java" charset="windows-1251" />
-    <file url="PROJECT" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/MainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/MyService.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

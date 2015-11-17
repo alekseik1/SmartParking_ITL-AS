@@ -31,4 +31,4 @@
     android:paddingLeft="?attr/listPreferredItemPaddingLeft"
     android:paddingRight="?attr/listPreferredItemPaddingRight"
     android:ellipsize="marquee" />
-<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/res/layout/select_dialog_item_material.xml --><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/layout/select_dialog_item_material.xml -->
+<!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/res/layout/select_dialog_item_material.xml --><!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/layout/select_dialog_item_material.xml -->

@@ -21,7 +21,7 @@ public class MyService extends Service {
 			if (t == 15) {
 				t = 0;
 				time++;
-				updateNotif(time, "ООО Кольцо Казань");
+				updateNotif(time, "РћРћРћ РљРѕР»СЊС†Рѕ РљР°Р·Р°РЅСЊ");
 			}
 		}
 
@@ -46,41 +46,41 @@ public class MyService extends Service {
 
 	@SuppressWarnings("deprecation")
 	void sendNotif() {
-		// 1-я часть
+		// 1-СЏ С‡Р°СЃС‚СЊ
 		Notification notif = new Notification(R.drawable.ic_launcher,
-				"Вы только что припарковались", System.currentTimeMillis());
+				"Р’С‹ С‚РѕР»СЊРєРѕ С‡С‚Рѕ РїСЂРёРїР°СЂРєРѕРІР°Р»РёСЃСЊ", System.currentTimeMillis());
 
-		// 3-я часть
+		// 3-СЏ С‡Р°СЃС‚СЊ
 		Intent intent = new Intent(this, ServerOplata.class);
 		intent.putExtra(ServerOplata.FILE_NAME, "somefile");
 		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
-		// 2-я часть
+		// 2-СЏ С‡Р°СЃС‚СЊ
 		notif.setLatestEventInfo(this, "Smart Parking",
-				"Вы припарковались на парковке ТЦ Кольцо", pIntent);
+				"Р’С‹ РїСЂРёРїР°СЂРєРѕРІР°Р»РёСЃСЊ РЅР° РїР°СЂРєРѕРІРєРµ РўР¦ РљРѕР»СЊС†Рѕ", pIntent);
 
-		// ставим флаг, чтобы уведомление пропало после нажатия
+		// СЃС‚Р°РІРёРј С„Р»Р°Рі, С‡С‚РѕР±С‹ СѓРІРµРґРѕРјР»РµРЅРёРµ РїСЂРѕРїР°Р»Рѕ РїРѕСЃР»Рµ РЅР°Р¶Р°С‚РёСЏ
 		notif.flags |= Notification.FLAG_AUTO_CANCEL;
 		notif.flags |= Notification.FLAG_ONGOING_EVENT;
 		notif.defaults |= Notification.DEFAULT_VIBRATE;
-		// отправляем
+		// РѕС‚РїСЂР°РІР»СЏРµРј
 		nm.notify(1, notif);	
 	}
 
 	@SuppressWarnings("deprecation")
 	public void updateNotif(int time, String park) {
-		Notification notif = new Notification(R.drawable.ic_launcher, "Вы уже "
-				+ time + " часов на парквоке " + park,
+		Notification notif = new Notification(R.drawable.ic_launcher, "Р’С‹ СѓР¶Рµ "
+				+ time + " С‡Р°СЃРѕРІ РЅР° РїР°СЂРєРІРѕРєРµ " + park,
 				System.currentTimeMillis());
 		if(time == 1) {
-			notif.setLatestEventInfo(MyService.this, "Smart Parking", "Вы уже "
-					+ time + " час на парквоке " + park, null);
+			notif.setLatestEventInfo(MyService.this, "Smart Parking", "Р’С‹ СѓР¶Рµ "
+					+ time + " С‡Р°СЃ РЅР° РїР°СЂРєРІРѕРєРµ " + park, null);
 		} else if(time == 2 || time == 3 || time == 4) {
-			notif.setLatestEventInfo(MyService.this, "Smart Parking", "Вы уже "
-					+ time + " часа на парквоке " + park, null);
+			notif.setLatestEventInfo(MyService.this, "Smart Parking", "Р’С‹ СѓР¶Рµ "
+					+ time + " С‡Р°СЃР° РЅР° РїР°СЂРєРІРѕРєРµ " + park, null);
 		} else {
-			notif.setLatestEventInfo(MyService.this, "Smart Parking", "Вы уже "
-					+ time + " часов на парквоке " + park, null);
+			notif.setLatestEventInfo(MyService.this, "Smart Parking", "Р’С‹ СѓР¶Рµ "
+					+ time + " С‡Р°СЃРѕРІ РЅР° РїР°СЂРєРІРѕРєРµ " + park, null);
 		}
 		notif.defaults |= Notification.DEFAULT_VIBRATE;
 		notif.flags |= Notification.FLAG_ONGOING_EVENT;

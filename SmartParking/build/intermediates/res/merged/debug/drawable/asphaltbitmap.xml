@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/asphalt"
-    android:tileMode="repeat" /><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/res/drawable/asphaltbitmap.xml -->
+    android:tileMode="repeat" /><!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/SmartParking/res/drawable/asphaltbitmap.xml -->

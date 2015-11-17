@@ -3,4 +3,4 @@
         android:title="@string/menu_settings"
         android:orderInCategory="100" />
 </menu>
-<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/res/menu/activity_main.xml -->
+<!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/SmartParking/res/menu/activity_main.xml -->

@@ -17,4 +17,4 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:color="@color/background_material_dark" />
 </selector>
-<!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/res/color/abc_background_cache_hint_selector_material_dark.xml --><!-- From: file:/home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/color/abc_background_cache_hint_selector_material_dark.xml -->
+<!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/res/color/abc_background_cache_hint_selector_material_dark.xml --><!-- From: file:/home/aleksei/studio-projects/SmartParking_ITL-AS/appcompat_v7/build/intermediates/bundles/debug/res/color/abc_background_cache_hint_selector_material_dark.xml -->
