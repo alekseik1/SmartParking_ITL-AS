@@ -17,7 +17,6 @@ import android.view.View.OnLongClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
@@ -30,12 +29,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class ServerTest extends Activity implements OnTouchListener {
-	
-	String web_site = "http://www.testing44.rurs.net/"; // then we will change it
-	
-	private static int count_of_cars = 10;
-	public static String s = "";
-	private int sch = 0;
+
+    public static String s = "";
+    private static int count_of_cars = 10;
+    String web_site = "http://www.testing44.rurs.net/"; // then we will change it
+    private int sch = 0;
 	private int id = -1;
 	private double TimeIn = 0;
 
@@ -68,12 +66,12 @@ public class ServerTest extends Activity implements OnTouchListener {
 
 			  if(s.charAt(i) == '1') {
                   try {
-                      ((TextView)rl.getChildAt(v)).setBackgroundResource(R.drawable.redcar);
+                      rl.getChildAt(v).setBackgroundResource(R.drawable.redcar);
                   } catch (NullPointerException e) {
                   }
               } else{
                   try {
-                      ((TextView)rl.getChildAt(v)).setBackgroundResource(R.drawable.greencar);
+                      rl.getChildAt(v).setBackgroundResource(R.drawable.greencar);
                   } catch (NullPointerException e) {
                   }
               }
@@ -82,14 +80,14 @@ public class ServerTest extends Activity implements OnTouchListener {
 			  
 		  }
           try {
-              ((TextView)findViewById(R.id.hel)).setBackgroundResource(R.drawable.redcar);
+              findViewById(R.id.hel).setBackgroundResource(R.drawable.redcar);
           } catch (Exception e) {
               e.printStackTrace();
           }
 
           if(id!=-1)
               try {
-                  ((TextView)findViewById(id)).setBackgroundResource(R.drawable.bluecar);
+                  findViewById(id).setBackgroundResource(R.drawable.bluecar);
               } catch (Exception e) {
                   e.printStackTrace();
               }
@@ -99,23 +97,23 @@ public class ServerTest extends Activity implements OnTouchListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kolco_map1);
-        
-        ((ImageView)findViewById(R.id.spiv1)).setOnTouchListener(this);
-        ((TextView)findViewById(R.id.hel)).setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				// TODO Auto-generated method stub
-				//v.setRotationX(v.getRotationX()+10);
-				//v.setRotationY(v.getRotationY()+10);
-				v.setRotation(v.getRotation()+45);
-		        SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
-		        SharedPreferences.Editor editor = storage.edit();
-		        editor.putInt("rotation", (int) v.getRotation());
-		        editor.commit();
-			}
-		});
+
+        findViewById(R.id.spiv1).setOnTouchListener(this);
+        findViewById(R.id.hel).setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // TODO Auto-generated method stub
+                //v.setRotationX(v.getRotationX()+10);
+                //v.setRotationY(v.getRotationY()+10);
+                v.setRotation(v.getRotation() + 45);
+                SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+                SharedPreferences.Editor editor = storage.edit();
+                editor.putInt("rotation", (int) v.getRotation());
+                editor.commit();
+            }
+        });
         //setContentView(R.layout.kolco_map);
         
         
@@ -147,50 +145,57 @@ public class ServerTest extends Activity implements OnTouchListener {
 			  }
 			//  if(rl.getChildAt(i).getId()==R.id.hel)
 				//  continue;
-			  ((TextView)rl.getChildAt(i)).setOnLongClickListener(new OnLongClickListener() {
-				
-					@Override
-					public boolean onLongClick(View v) {
-						// TODO Auto-generated method stub
-				        SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
-				        SharedPreferences.Editor editor = storage.edit();
-				        int hd = storage.getInt("id", -1);
-				        if(hd!=-1)
-				        {
+              rl.getChildAt(i).setOnLongClickListener(new OnLongClickListener() {
 
-							try {
-								((TextView)findViewById(hd)).setText("");
-							} catch (NullPointerException e) {
-							}
-						}
-				        editor.putInt("id", v.getId());
-				        id = v.getId();
-				        editor.commit();
-                        try {
-                            v.setBackgroundResource(R.drawable.bluecar);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        try {
-							((TextView)v).setText(name);
-						} catch (NullPointerException e) {
-						}
-						Toast.makeText(ServerTest.this, "Saved", Toast.LENGTH_SHORT).show();
-				        Notification.Builder nb = new Notification.Builder(getApplicationContext());
-				        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-				        nm.cancel(5);
-				        nb.setOngoing(true)
-				          .setSmallIcon(R.drawable.ic_launcher)
-				          .setContentText("Вы припарковались на месте "+ v.getTag())
-				          .setContentTitle("Smart Parking")
-				          .setWhen(System.currentTimeMillis())
-				          .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), ServerTest.class), PendingIntent.FLAG_UPDATE_CURRENT));
-				        nm.notify(5, nb.build());
-				        refresh();
-						return false;
-					}
-			  });
-			}
+                  @Override
+                  public boolean onLongClick(View v) {
+                      // TODO Auto-generated method stub
+                      if (id != v.getId()) {
+                          SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+                          SharedPreferences.Editor editor = storage.edit();
+                          int hd = storage.getInt("id", -1);
+                          if (hd != -1) {
+
+                              try {
+                                  ((TextView) findViewById(hd)).setText("");
+                              } catch (NullPointerException e) {
+                              }
+                          }
+                          editor.putInt("id", v.getId());
+                          id = v.getId();
+                          editor.commit();
+                          try {
+                              v.setBackgroundResource(R.drawable.bluecar);
+                          } catch (Exception e) {
+                              e.printStackTrace();
+                          }
+                          try {
+                              ((TextView) v).setText(name);
+                          } catch (NullPointerException e) {
+                          }
+                          Toast.makeText(ServerTest.this, "Saved", Toast.LENGTH_SHORT).show();
+                          Notification.Builder nb = new Notification.Builder(getApplicationContext());
+                          NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                          nm.cancel(5);
+                          nb.setOngoing(true)
+                                  .setSmallIcon(R.drawable.ic_launcher)
+                                  .setContentText("Вы припарковались на месте " + v.getTag())
+                                  .setContentTitle("Smart Parking")
+                                  .setWhen(System.currentTimeMillis())
+                                  .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), ServerTest.class), PendingIntent.FLAG_UPDATE_CURRENT));
+                          nm.notify(5, nb.build());
+                          refresh();
+                          return false;
+                      } else {
+                          NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                          nm.cancel(5);
+                          v.setBackgroundResource(R.drawable.redcar);
+                          get_place();
+                          return false;
+                      }
+                  }
+              });
+          }
 			
 
 		
@@ -198,7 +203,7 @@ public class ServerTest extends Activity implements OnTouchListener {
 		if(id!=-1)
 		{
             try {
-                ((TextView)findViewById(id)).setBackgroundResource(R.drawable.bluecar);
+                findViewById(id).setBackgroundResource(R.drawable.bluecar);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -209,108 +214,101 @@ public class ServerTest extends Activity implements OnTouchListener {
 			}
 
 			SharedPreferences storage1 = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
-			LayoutParams lp = new LayoutParams(((TextView)findViewById(R.id.hel)).getLayoutParams());
-			lp.leftMargin = (int) storage1.getInt("x", 0);
-			lp.topMargin = (int) storage1.getInt("y", 0);
-			((TextView)findViewById(R.id.hel)).setLayoutParams(lp);
-			((TextView)findViewById(R.id.hel)).setRotation(storage1.getInt("rotation", 0));
-			
-			if(id==R.id.hel)
-				((TextView)findViewById(R.id.hel)).setVisibility(View.VISIBLE);
-		}
-		
+            LayoutParams lp = new LayoutParams(findViewById(R.id.hel).getLayoutParams());
+            lp.leftMargin = storage1.getInt("x", 0);
+            lp.topMargin = storage1.getInt("y", 0);
+            findViewById(R.id.hel).setLayoutParams(lp);
+            findViewById(R.id.hel).setRotation(storage1.getInt("rotation", 0));
 
-		
-		((TextView)(findViewById(R.id.imageView1))).setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				if(sch == 0)
-				{
-					sch = 1;
-					TimeIn = System.currentTimeMillis();
-				}
-				
-				double TimeOut = System.currentTimeMillis();
-				
-				if((TimeOut-TimeIn)<=1000) sch++;
-				else sch = 0;
-				
-				if(sch==8)
-				{
-					AlertDialog.Builder dialog = new AlertDialog.Builder(ServerTest.this);
-					final EditText txt = new EditText(ServerTest.this);
-					txt.setVisibility(View.VISIBLE);
-					dialog.setView(txt);
-					
-					dialog.setCancelable(true);
-					dialog.setPositiveButton("Set", new DialogInterface.OnClickListener(){
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-							
-				        	String text = String.valueOf(txt.getText());
-				        	int nom = 0;
-				        	int val = 0;
-				        	for(int i = 0; i<text.length(); i++)
-				        	{
-				        		if(text.charAt(i)!='=')
-				        		{
-				        			nom = nom * 10 + (int)(text.charAt(i)-'0');
-				        		}
-				        		else break;
-				        	}
-				        	
-				        	if(text.charAt(text.length()-1)=='1')
-				        	{
-				        		val = 1;
-				        	}
-				        	
-				            GettingInfo gf = new GettingInfo(ServerTest.this);
-				            try {
-								try {
-									@SuppressWarnings("unused")
-									String inf = gf.execute(web_site + "?nom=" + nom + "&val=" +  val).get(3000, TimeUnit.MILLISECONDS);
-								} catch (TimeoutException e) {
-									// TODO Auto-generated catch block
-									Toast.makeText(ServerTest.this, "Error in time out", Toast.LENGTH_SHORT).show();
-								}
-							} catch (InterruptedException e) {
-								Toast.makeText(ServerTest.this, "Error connection", Toast.LENGTH_SHORT).show();
-								
-							} catch (ExecutionException e) {
-								// TODO Auto-generated catch block
-								Toast.makeText(ServerTest.this, "Error in connection", Toast.LENGTH_SHORT).show();
-							}
-				            
-				            
-				        dialog.dismiss();
-				        get_place();
-							
-						}
-					});
-					
-					dialog.setNegativeButton("Close", new DialogInterface.OnClickListener(){
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							dialog.dismiss();
-						}
-					});
-					
-					dialog.show();
-					sch = 0;
-				}
-				
-			}
-		});;
-		
-    
+            if(id==R.id.hel)
+                findViewById(R.id.hel).setVisibility(View.VISIBLE);
+        }
+
+
+        findViewById(R.id.imageView1).setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+
+                if (sch == 0) {
+                    sch = 1;
+                    TimeIn = System.currentTimeMillis();
+                }
+
+                double TimeOut = System.currentTimeMillis();
+
+                if ((TimeOut - TimeIn) <= 1000) sch++;
+                else sch = 0;
+
+                if (sch == 8) {
+                    // Диалог, который позволяет задать состояние места
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(ServerTest.this);
+                    final EditText txt = new EditText(ServerTest.this);
+                    txt.setVisibility(View.VISIBLE);
+                    dialog.setView(txt);
+
+                    dialog.setCancelable(true);
+                    dialog.setPositiveButton("Set", new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // TODO Auto-generated method stub
+
+                            String text = String.valueOf(txt.getText());
+                            int nom = 0;
+                            int val = 0;
+                            for (int i = 0; i < text.length(); i++) {
+                                if (text.charAt(i) != '=') {
+                                    nom = nom * 10 + text.charAt(i) - '0';
+                                } else break;
+                            }
+
+                            if (text.charAt(text.length() - 1) == '1') {
+                                val = 1;
+                            }
+
+                            GettingInfo gf = new GettingInfo(ServerTest.this);
+                            try {
+                                try {
+                                    @SuppressWarnings("unused")
+                                    String inf = gf.execute(web_site + "?nom=" + nom + "&val=" + val).get(3000, TimeUnit.MILLISECONDS);
+                                } catch (TimeoutException e) {
+                                    // TODO Auto-generated catch block
+                                    Toast.makeText(ServerTest.this, "Error in time out", Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (InterruptedException e) {
+                                Toast.makeText(ServerTest.this, "Error connection", Toast.LENGTH_SHORT).show();
+
+                            } catch (ExecutionException e) {
+                                // TODO Auto-generated catch block
+                                Toast.makeText(ServerTest.this, "Error in connection", Toast.LENGTH_SHORT).show();
+                            }
+
+
+                            dialog.dismiss();
+                            get_place();
+
+                        }
+                    });
+
+                    dialog.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.show();
+                    sch = 0;
+                }
+
+            }
+        });
+
 
         get_place();
-        
+        // Обновить статус всех мест
         Button refresh = (Button) findViewById(R.id.refresh);
         refresh.setOnClickListener(new OnClickListener() {
 			
@@ -329,7 +327,8 @@ public class ServerTest extends Activity implements OnTouchListener {
 		
 	}
 
-	private void get_place() {
+    // Узнать про все места
+    private void get_place() {
 		 GettingInfo info = new GettingInfo(getApplicationContext());
          String ginfo = "";
 	     String scolor = "";
@@ -405,7 +404,8 @@ public class ServerTest extends Activity implements OnTouchListener {
 		
 		if(v.getId()==R.id.spiv1)
 		{
-			if(event.getAction()==MotionEvent.ACTION_DOWN)
+            // Передвижение машинки by Малик
+            if(event.getAction()==MotionEvent.ACTION_DOWN)
 			{
 				if(!down)
 				{
@@ -421,15 +421,15 @@ public class ServerTest extends Activity implements OnTouchListener {
 						float x = event.getX();
 						float y = event.getY();
 						//Toast.makeText(ServerTest.this, (int) System.currentTimeMillis() + "out", Toast.LENGTH_SHORT).show();
-						
-						LayoutParams lp = new LayoutParams(((TextView)findViewById(R.id.hel)).getLayoutParams());
-						lp.leftMargin = (int) x;
+
+                        LayoutParams lp = new LayoutParams(findViewById(R.id.hel).getLayoutParams());
+                        lp.leftMargin = (int) x;
 						lp.topMargin = (int) y;
-						((TextView)findViewById(R.id.hel)).setLayoutParams(lp);
-						((TextView)findViewById(R.id.hel)).setVisibility(View.VISIBLE);
-						
-						
-				        SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+                        findViewById(R.id.hel).setLayoutParams(lp);
+                        findViewById(R.id.hel).setVisibility(View.VISIBLE);
+
+
+                        SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
 				        SharedPreferences.Editor editor = storage.edit();
 				        editor.putInt("x", (int) x);
 				        editor.putInt("y", (int) y);

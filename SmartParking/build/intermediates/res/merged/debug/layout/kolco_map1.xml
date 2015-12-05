@@ -21,10 +21,16 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/map" />
 
-            
 
-                    
-           <Button
+			<RadioButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="New RadioButton"
+				android:id="@+id/radioButton"
+				android:layout_above="@+id/imageView4"
+				android:layout_toStartOf="@+id/refresh" />
+
+			<Button
             
             android:id="@+id/refresh"
             android:layout_width="wrap_content"
@@ -145,7 +151,7 @@
    			            			             android:textColor="@color/choosen"
    			            			             android:visibility="invisible" />
 
-        </RelativeLayout>
+		</RelativeLayout>
         
 
         

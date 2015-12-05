@@ -10,9 +10,9 @@
         android:layout_height="wrap_content" >
 
         <RelativeLayout
+			android:id="@+id/batya"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/batya"
             android:orientation="vertical" >
 
             <ImageView
@@ -21,10 +21,8 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/map" />
 
-            
 
-                    
-           <Button
+			<Button
             
             android:id="@+id/refresh"
             android:layout_width="wrap_content"
@@ -145,7 +143,7 @@
    			            			             android:textColor="@color/choosen"
    			            			             android:visibility="invisible" />
 
-        </RelativeLayout>
+		</RelativeLayout>
         
 
         
