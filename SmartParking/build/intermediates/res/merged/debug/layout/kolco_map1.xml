@@ -10,9 +10,9 @@
         android:layout_height="wrap_content" >
 
         <RelativeLayout
+			android:id="@+id/batya"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/batya"
             android:orientation="vertical" >
 
             <ImageView
@@ -21,14 +21,6 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/map" />
 
-
-			<RadioButton
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="New RadioButton"
-				android:id="@+id/radioButton"
-				android:layout_above="@+id/imageView4"
-				android:layout_toStartOf="@+id/refresh" />
 
 			<Button
             

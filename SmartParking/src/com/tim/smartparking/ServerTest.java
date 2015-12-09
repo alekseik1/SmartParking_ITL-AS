@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -31,11 +32,12 @@ import java.util.concurrent.TimeoutException;
 public class ServerTest extends Activity implements OnTouchListener {
 
     public static String s = "";
+    public static String stCar;
     private static int count_of_cars = 10;
     String web_site = "http://www.testing44.rurs.net/"; // then we will change it
     private int sch = 0;
 	private int id = -1;
-	private double TimeIn = 0;
+    private double TimeIn = 0;
 
 	private boolean down = false;
 
@@ -190,17 +192,16 @@ public class ServerTest extends Activity implements OnTouchListener {
                           NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                           nm.cancel(5);
                           v.setBackgroundResource(R.drawable.redcar);
-                          get_place();
+                          getPlace gp = new getPlace();
+                          gp.execute();
                           return false;
                       }
                   }
               });
           }
-			
 
-		
-		
-		if(id!=-1)
+
+        if(id!=-1)
 		{
             try {
                 findViewById(id).setBackgroundResource(R.drawable.bluecar);
@@ -287,8 +288,8 @@ public class ServerTest extends Activity implements OnTouchListener {
 
 
                             dialog.dismiss();
-                            get_place();
-
+                            getPlace gp = new getPlace();
+                            gp.execute();
                         }
                     });
 
@@ -307,149 +308,170 @@ public class ServerTest extends Activity implements OnTouchListener {
         });
 
 
-        get_place();
-        // Обновить статус всех мест
+        getPlace gp = new getPlace();
+        gp.execute();        // Обновить статус всех мест
         Button refresh = (Button) findViewById(R.id.refresh);
         refresh.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				get_place();
-				// TODO Auto-generated method stub
-				
+                getPlace gp = new getPlace();
+                gp.execute();                // TODO Auto-generated method stub
+
 			}
 		});
     }
 
 	protected void refresh() {
-		get_place();
-		// TODO Auto-generated method stub
-		
+        getPlace gp = new getPlace();
+        gp.execute();
+        // TODO Auto-generated method stub
+
 	}
 
-    // Узнать про все места
-    private void get_place() {
-		 GettingInfo info = new GettingInfo(getApplicationContext());
-         String ginfo = "";
-	     String scolor = "";
-         
-         try {
-        // Log.e("here", "111w");
-			ginfo = info.execute(web_site).get(7000, TimeUnit.MILLISECONDS);
-			//Log.e("here", "222w");
-			if(ginfo.equals("Error"))
-			{
-				Toast.makeText(getApplicationContext(), "Error getting info", Toast.LENGTH_SHORT).show();
-				return;
-			}
-			
-			//Toast.makeText(getApplicationContext(), ginfo, Toast.LENGTH_LONG).show();
-			//ginfo. = 'g';
-		//	ginfo = ginfo.substring(0, 1) +'o' + ginfo.substring(3);
-			
-			JSONWorking jw = new JSONWorking(getApplicationContext());
-	         
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        // TODO Auto-generated method stub
 
-	         try {
-					ArrayList<HashMap<String, String>>  res = jw.execute(ginfo).get();
-					
-				//	Log.e("json","done");
-					
-					if(res==null)
-					{
-						Toast.makeText(getApplicationContext(), "Error Array equals to null", Toast.LENGTH_SHORT).show();
-						return;
-					}
-					
-		
-					for(int i = 0; i<res.size(); i++)
-					{
-						HashMap<String, String> item = res.get(i);
-						String used = item.get("Used");
-						
-						scolor = scolor + used;
-					}
-				} catch (InterruptedException e) {
-					
+        //Toast.makeText(ServerTest.this, (int) v.getId(), Toast.LENGTH_SHORT).show();
+        //Log.e("sp", String.valueOf(R.id.spiv1));
 
-					Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
-					// TODO Auto-generated catch block
-					//e.printStackTrace();
-				} catch (ExecutionException e) {
-					Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
-					// TODO Auto-generated catch block
-					//e.printStackTrace();
-				}
-			//test
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			Toast.makeText(getApplicationContext(), "Error 1", Toast.LENGTH_SHORT).show();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			Toast.makeText(getApplicationContext(), "Error 2", Toast.LENGTH_SHORT).show();
-		} catch (TimeoutException e) {
-			// TODO Auto-generated catch block
-			Toast.makeText(getApplicationContext(), "Error Time out", Toast.LENGTH_SHORT).show();
-		}
-         
-         setColorCars(scolor);
-	}
-
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		// TODO Auto-generated method stub
-		
-		//Toast.makeText(ServerTest.this, (int) v.getId(), Toast.LENGTH_SHORT).show();
-		//Log.e("sp", String.valueOf(R.id.spiv1));
-		
-		if(v.getId()==R.id.spiv1)
-		{
+        if (v.getId() == R.id.spiv1) {
             // Передвижение машинки by Малик
-            if(event.getAction()==MotionEvent.ACTION_DOWN)
-			{
-				if(!down)
-				{
-					down = true;
-					ins = System.currentTimeMillis();
-					//Toast.makeText(ServerTest.this, (int) System.currentTimeMillis(), Toast.LENGTH_SHORT).show();
-				}
-				else
-				{
-					long now = System.currentTimeMillis();
-					if((now-ins)<=500)
-					{
-						float x = event.getX();
-						float y = event.getY();
-						//Toast.makeText(ServerTest.this, (int) System.currentTimeMillis() + "out", Toast.LENGTH_SHORT).show();
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                if (!down) {
+                    down = true;
+                    ins = System.currentTimeMillis();
+                    //Toast.makeText(ServerTest.this, (int) System.currentTimeMillis(), Toast.LENGTH_SHORT).show();
+                } else {
+                    long now = System.currentTimeMillis();
+                    if ((now - ins) <= 500) {
+                        float x = event.getX();
+                        float y = event.getY();
+                        //Toast.makeText(ServerTest.this, (int) System.currentTimeMillis() + "out", Toast.LENGTH_SHORT).show();
 
                         LayoutParams lp = new LayoutParams(findViewById(R.id.hel).getLayoutParams());
                         lp.leftMargin = (int) x;
-						lp.topMargin = (int) y;
+                        lp.topMargin = (int) y;
                         findViewById(R.id.hel).setLayoutParams(lp);
                         findViewById(R.id.hel).setVisibility(View.VISIBLE);
 
 
                         SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
-				        SharedPreferences.Editor editor = storage.edit();
-				        editor.putInt("x", (int) x);
-				        editor.putInt("y", (int) y);
-				        editor.commit();
-						
-						
-						down = false;
-						ins = 0;
-					}
-					else
-					{
-						down = true;
-						ins = now;
-					}
+                        SharedPreferences.Editor editor = storage.edit();
+                        editor.putInt("x", (int) x);
+                        editor.putInt("y", (int) y);
+                        editor.commit();
+
+
+                        down = false;
+                        ins = 0;
+                    } else {
+                        down = true;
+                        ins = now;
+                    }
 
 				}
-			}
-		}
-			
-			
-		return false;
-	}
+            }
+        }
+
+
+        return false;
+    }
+
+    class getPlace extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            get_place();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            setColorCars(stCar);
+        }
+
+        // Узнать про все места
+        private void get_place() {
+            Log.d("Update", "Started AsyncTask!");
+            GettingInfo info = new GettingInfo(getApplicationContext());
+            String ginfo = "";
+            String scolor = "";
+
+            try {
+                // Log.e("here", "111w");
+                ginfo = info.execute(web_site).get(7000, TimeUnit.MILLISECONDS);
+                //Log.e("here", "222w");
+                if (ginfo.equals("Error")) {
+                    Log.d("Update", "Error getting info");
+                    //Toast.makeText(getApplicationContext(), "Error getting info", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                Log.d("Update", "ginfo is " + ginfo);
+                //Toast.makeText(getApplicationContext(), ginfo, Toast.LENGTH_LONG).show();
+                //ginfo. = 'g';
+                //	ginfo = ginfo.substring(0, 1) +'o' + ginfo.substring(3);
+
+                JSONWorking jw = new JSONWorking(getApplicationContext());
+                Log.d("Update", "JSON does its magic!");
+
+                try {
+                    ArrayList<HashMap<String, String>> res = jw.execute(ginfo).get();
+
+                    //	Log.e("json","done");
+
+                    if (res == null) {
+                        Log.d("Update", "Array equals to null");
+                        //Toast.makeText(getApplicationContext(), "Error Array equals to null", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+
+                    for (int i = 0; i < res.size(); i++) {
+                        HashMap<String, String> item = res.get(i);
+                        String used = item.get("Used");
+
+                        scolor = scolor + used;
+                        Log.d("Update", used);
+                    }
+                } catch (InterruptedException e) {
+
+                    Log.d("Update", "Error in using JSON");
+                    //Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
+                    // TODO Auto-generated catch block
+                    //e.printStackTrace();
+                } catch (ExecutionException e) {
+                    Log.d("Update", "Error in using JSON");
+                    //Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
+                    // TODO Auto-generated catch block
+                    //e.printStackTrace();
+                }
+                //test
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                Log.d("Update", "Error 1");
+                //Toast.makeText(getApplicationContext(), "Error 1", Toast.LENGTH_SHORT).show();
+            } catch (ExecutionException e) {
+                // TODO Auto-generated catch block
+                Log.d("Update", "Error 2");
+                //Toast.makeText(getApplicationContext(), "Error 2", Toast.LENGTH_SHORT).show();
+            } catch (TimeoutException e) {
+                Log.d("Update", "Error timeout");
+                // TODO Auto-generated catch block
+                //Toast.makeText(getApplicationContext(), "Error Time out", Toast.LENGTH_SHORT).show();
+            }
+            Log.d("Update", "Got it! Now try to set up cars");
+            stCar = scolor;
+            Log.d("Update", "StCar is " + stCar);
+        }
+
+    }
 }
