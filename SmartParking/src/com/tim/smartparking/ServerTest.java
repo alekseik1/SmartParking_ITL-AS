@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,6 +24,14 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
@@ -32,14 +41,13 @@ import java.util.concurrent.TimeoutException;
 public class ServerTest extends Activity implements OnTouchListener {
 
     public static String s = "";
-    public static String stCar;
+    public static AlertDialog ad1;
     private static int count_of_cars = 10;
     String web_site = "http://www.testing44.rurs.net/"; // then we will change it
     private int sch = 0;
-	private int id = -1;
+    private int id = -1;
     private double TimeIn = 0;
-
-	private boolean down = false;
+    private boolean down = false;
 
 	private long ins;
 	
@@ -129,9 +137,15 @@ public class ServerTest extends Activity implements OnTouchListener {
 			}
         	
         };*/
-		
-		
-		SharedPreferences storage = this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+
+        AlertDialog.Builder ad = new AlertDialog.Builder(ServerTest.this);
+        ad.setPositiveButton("", null);
+        ad.setNegativeButton("", null);
+        ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
+        ad1 = ad.create();
+        Log.d("Update", "refresh alert dialog is ready");
+
+        SharedPreferences storage = this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
 		final String name = storage.getString("name", "Malik");
 		id = storage.getInt("id", -1);
 		Log.e("eclipse", "eclispe");
@@ -192,8 +206,7 @@ public class ServerTest extends Activity implements OnTouchListener {
                           NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                           nm.cancel(5);
                           v.setBackgroundResource(R.drawable.redcar);
-                          getPlace gp = new getPlace();
-                          gp.execute();
+                          get_place();
                           return false;
                       }
                   }
@@ -201,8 +214,7 @@ public class ServerTest extends Activity implements OnTouchListener {
           }
 
 
-        if(id!=-1)
-		{
+        if (id != -1) {
             try {
                 findViewById(id).setBackgroundResource(R.drawable.bluecar);
             } catch (Exception e) {
@@ -221,7 +233,7 @@ public class ServerTest extends Activity implements OnTouchListener {
             findViewById(R.id.hel).setLayoutParams(lp);
             findViewById(R.id.hel).setRotation(storage1.getInt("rotation", 0));
 
-            if(id==R.id.hel)
+            if (id == R.id.hel)
                 findViewById(R.id.hel).setVisibility(View.VISIBLE);
         }
 
@@ -288,8 +300,8 @@ public class ServerTest extends Activity implements OnTouchListener {
 
 
                             dialog.dismiss();
-                            getPlace gp = new getPlace();
-                            gp.execute();
+                            get_place();
+
                         }
                     });
 
@@ -307,27 +319,104 @@ public class ServerTest extends Activity implements OnTouchListener {
             }
         });
 
-
-        getPlace gp = new getPlace();
-        gp.execute();        // Обновить статус всех мест
+        // Обновить статус всех мест
         Button refresh = (Button) findViewById(R.id.refresh);
         refresh.setOnClickListener(new OnClickListener() {
 
-			@Override
+            @Override
 			public void onClick(View v) {
-                getPlace gp = new getPlace();
-                gp.execute();                // TODO Auto-generated method stub
+                ad1.show();
+                get_place();
+                ad1.dismiss();
+                // TODO Auto-generated method stub
 
-			}
+            }
 		});
     }
 
 	protected void refresh() {
-        getPlace gp = new getPlace();
-        gp.execute();
+        AlertDialog.Builder ad = new AlertDialog.Builder(ServerTest.this);
+        AlertDialog ad1 = null;
+        ad.setPositiveButton("", null);
+        ad.setNegativeButton("", null);
+        Log.d("Update", "refresh started");
+        ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
+        try {
+            ad1 = ad.create();
+            ad1.show();
+        } catch (NullPointerException e) {
+            Log.d("Update", "Unable to create alert dialog wait");
+        }
+        get_place();
+        ad1.dismiss();
         // TODO Auto-generated method stub
 
-	}
+    }
+
+    // Узнать про все места
+    private void get_place() {
+        GettingInfo info = new GettingInfo(getApplicationContext());
+        String ginfo = "";
+        String scolor = "";
+
+        try {
+            // Log.e("here", "111w");
+            ginfo = info.execute(web_site).get(7000, TimeUnit.MILLISECONDS);
+            //Log.e("here", "222w");
+            if (ginfo.equals("Error")) {
+                Toast.makeText(getApplicationContext(), "Error getting info", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            //Toast.makeText(getApplicationContext(), ginfo, Toast.LENGTH_LONG).show();
+            //ginfo. = 'g';
+            //	ginfo = ginfo.substring(0, 1) +'o' + ginfo.substring(3);
+
+            JSONWorking jw = new JSONWorking(getApplicationContext());
+
+
+            try {
+                ArrayList<HashMap<String, String>> res = jw.execute(ginfo).get();
+
+                //	Log.e("json","done");
+
+                if (res == null) {
+                    Toast.makeText(getApplicationContext(), "Error Array equals to null", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                for (int i = 0; i < res.size(); i++) {
+                    HashMap<String, String> item = res.get(i);
+                    String used = item.get("Used");
+
+                    scolor = scolor + used;
+                }
+            } catch (InterruptedException e) {
+
+
+                Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
+                // TODO Auto-generated catch block
+                //e.printStackTrace();
+            } catch (ExecutionException e) {
+                Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
+                // TODO Auto-generated catch block
+                //e.printStackTrace();
+            }
+            //test
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            Toast.makeText(getApplicationContext(), "Error 1", Toast.LENGTH_SHORT).show();
+        } catch (ExecutionException e) {
+            // TODO Auto-generated catch block
+            Toast.makeText(getApplicationContext(), "Error 2", Toast.LENGTH_SHORT).show();
+        } catch (TimeoutException e) {
+            // TODO Auto-generated catch block
+            Toast.makeText(getApplicationContext(), "Error Time out", Toast.LENGTH_SHORT).show();
+        }
+
+        setColorCars(scolor);
+    }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -379,99 +468,76 @@ public class ServerTest extends Activity implements OnTouchListener {
         return false;
     }
 
-    class getPlace extends AsyncTask<Void, Void, Void> {
+    class GettingInfo extends AsyncTask<String, Void, String> {
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
+        public GettingInfo(Context applicationContext) {
+            // TODO Auto-generated constructor stub
+            super();
         }
 
-        @Override
-        protected Void doInBackground(Void... params) {
-            get_place();
-            return null;
-        }
 
         @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            setColorCars(stCar);
-        }
+        protected String doInBackground(String... params) {
 
-        // Узнать про все места
-        private void get_place() {
-            Log.d("Update", "Started AsyncTask!");
-            GettingInfo info = new GettingInfo(getApplicationContext());
-            String ginfo = "";
-            String scolor = "";
+            //Log.e("GettingINFO", "get");
 
+            String info = "";
+
+            URL url = null;
             try {
-                // Log.e("here", "111w");
-                ginfo = info.execute(web_site).get(7000, TimeUnit.MILLISECONDS);
-                //Log.e("here", "222w");
-                if (ginfo.equals("Error")) {
-                    Log.d("Update", "Error getting info");
-                    //Toast.makeText(getApplicationContext(), "Error getting info", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                Log.d("Update", "ginfo is " + ginfo);
-                //Toast.makeText(getApplicationContext(), ginfo, Toast.LENGTH_LONG).show();
-                //ginfo. = 'g';
-                //	ginfo = ginfo.substring(0, 1) +'o' + ginfo.substring(3);
-
-                JSONWorking jw = new JSONWorking(getApplicationContext());
-                Log.d("Update", "JSON does its magic!");
-
+                url = new URL(params[0]);
+                HttpURLConnection httpURLConnection = null;
                 try {
-                    ArrayList<HashMap<String, String>> res = jw.execute(ginfo).get();
+                    httpURLConnection = (HttpURLConnection) url.openConnection();
+                    httpURLConnection.setDoInput(true);
+                    InputStream in = null;
+                    try {
+                        in = new BufferedInputStream(httpURLConnection.getInputStream());
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                        try {
+                            String inf = "";
+                            while ((inf = reader.readLine()) != null)
+                                info += inf;
 
-                    //	Log.e("json","done");
+                            httpURLConnection.disconnect();
+                            return info;
 
-                    if (res == null) {
-                        Log.d("Update", "Array equals to null");
-                        //Toast.makeText(getApplicationContext(), "Error Array equals to null", Toast.LENGTH_SHORT).show();
-                        return;
+                        } catch (IOException e) {
+                            Log.e("m", "I m here3");
+                            //	if(context!=null)
+                            //		Toast.makeText(context, "Error in Stream URL", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } catch (IOException e) {
+                        Log.e("m", "I m here2");
+                        //if(context!=null)
+                        //Toast.makeText(context, "Error in reading Line", Toast.LENGTH_SHORT).show();
                     }
 
 
-                    for (int i = 0; i < res.size(); i++) {
-                        HashMap<String, String> item = res.get(i);
-                        String used = item.get("Used");
-
-                        scolor = scolor + used;
-                        Log.d("Update", used);
-                    }
-                } catch (InterruptedException e) {
-
-                    Log.d("Update", "Error in using JSON");
-                    //Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
-                    // TODO Auto-generated catch block
-                    //e.printStackTrace();
-                } catch (ExecutionException e) {
-                    Log.d("Update", "Error in using JSON");
-                    //Toast.makeText(getApplicationContext(), "Error in using JSON", Toast.LENGTH_SHORT).show();
-                    // TODO Auto-generated catch block
-                    //e.printStackTrace();
+                } catch (IOException e) {
+                    Log.e("m", "I m here");
+                    //if(context!=null)
+                    //Toast.makeText(context, "Error in connection to URL", Toast.LENGTH_SHORT).show();
                 }
-                //test
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                Log.d("Update", "Error 1");
-                //Toast.makeText(getApplicationContext(), "Error 1", Toast.LENGTH_SHORT).show();
-            } catch (ExecutionException e) {
-                // TODO Auto-generated catch block
-                Log.d("Update", "Error 2");
-                //Toast.makeText(getApplicationContext(), "Error 2", Toast.LENGTH_SHORT).show();
-            } catch (TimeoutException e) {
-                Log.d("Update", "Error timeout");
-                // TODO Auto-generated catch block
-                //Toast.makeText(getApplicationContext(), "Error Time out", Toast.LENGTH_SHORT).show();
+         /*   catch(ConnectException e){
+                if(context!=null)
+            		Toast.makeText(context, "Error in connecting", Toast.LENGTH_SHORT).show();
+            }*/
+
+            } catch (MalformedURLException e) {
+                //	if(context!=null)
+                //Toast.makeText(context, "Error in getting URL", Toast.LENGTH_SHORT).show();
             }
-            Log.d("Update", "Got it! Now try to set up cars");
-            stCar = scolor;
-            Log.d("Update", "StCar is " + stCar);
+
+            return "Error";
+
+
         }
 
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+        }
     }
 }

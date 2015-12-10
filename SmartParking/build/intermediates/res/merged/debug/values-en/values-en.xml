@@ -56,6 +56,7 @@
     <string name="phone">Phone number:</string>
     <string name="place_error">Places error</string>
     <string name="place_not_found">Sorry, no place found</string>
+    <string name="please_wait">Please, wait...</string>
     <string name="pobeda">40 let Pobedi, 52B</string>
     <string name="query_limit">Sorry, query limit to Google Places is reached</string>
     <string name="refresh">Refresh</string>

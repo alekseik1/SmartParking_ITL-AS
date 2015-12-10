@@ -77,5 +77,6 @@
         <item>Chelni</item>
         <item>Kazan</item>
     </string-array>
+    <string name="please_wait">Please, wait...</string>
 
 </resources>

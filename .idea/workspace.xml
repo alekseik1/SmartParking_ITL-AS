@@ -20,27 +20,51 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="033259ad-7c36-4ebe-8768-132ecbbea224" name="Default" comment="Syncing to server is now in AsyncTask">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SmartParking/res/layout/alert_wait.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GettingInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/GettingInfo.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/BeaconMap.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/BeaconMap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ChelniParks.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ChelniParks.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Chistopolskaya.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Chistopolskaya.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Garag500.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Garag500.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GoogleMapView.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GoogleMapView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$2.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$GetDistance$1.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$GetDistance$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$GetDistance.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$GetDistance.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$LoadPlaces$1.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$LoadPlaces$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$LoadPlaces.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity$LoadPlaces.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/GooglePlaceActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/KazanParks.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/KazanParks.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Kolco.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Kolco.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Kruiz.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Kruiz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/LeDeviceListAdapter.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/LeDeviceListAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ListBeaconsActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ListBeaconsActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MainActivity$6.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MainActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MainActivity$7.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MainActivity$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MainActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MyLocationActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/MyLocationActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Oplata.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/Oplata.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/PlacesMapActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/PlacesMapActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$id.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$integer.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$layout.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$menu.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/android/support/v7/appcompat/R$string.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/android/support/v7/appcompat/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/google/android/gms/R$string.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/google/android/gms/R$string.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$string.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$string.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$style.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$style.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$styleable.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/RunActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/RunActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SPMapActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SPMapActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerOplata$4.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerOplata$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerOplata.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerOplata.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$1.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$2.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$3$1.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$3$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$3$2.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest$3$2.class" />
@@ -49,19 +73,26 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/ServerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SinglePlaceActivity$LoadSinglePlaceDetails$1.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SinglePlaceActivity$LoadSinglePlaceDetails$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SinglePlaceActivity$LoadSinglePlaceDetails.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SinglePlaceActivity$LoadSinglePlaceDetails.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SinglePlaceActivity.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SinglePlaceActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/outputs/apk/SmartParking-debug-unaligned.apk" afterPath="$PROJECT_DIR$/SmartParking/build/outputs/apk/SmartParking-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/outputs/apk/SmartParking-debug.apk" afterPath="$PROJECT_DIR$/SmartParking/build/outputs/apk/SmartParking-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SplashScreen.class" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/classes/debug/com/tim/smartparking/SplashScreen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/dex/debug/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/SmartParking/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/SmartParking/build/generated/source/r/debug/com/google/android/gms/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/generated/source/r/debug/com/tim/smartparking/R.java" afterPath="$PROJECT_DIR$/SmartParking/build/generated/source/r/debug/com/tim/smartparking/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ServerTest.java" afterPath="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ServerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/res/merged/debug/layout/kolco_map1.xml" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/res/merged/debug/layout/kolco_map1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/incremental/mergeResourcesdebug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/res/values/strings.xml" afterPath="$PROJECT_DIR$/SmartParking/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/res/values-en/strings.xml" afterPath="$PROJECT_DIR$/SmartParking/res/values-en/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/res/merged/debug/values-en/values-en.xml" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/res/merged/debug/values-en/values-en.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartParking/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/SmartParking/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SmartParking_ITL-master.iws" />
@@ -95,8 +126,11 @@
         <entry file="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-              <folding />
+              <caret line="140" column="37" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
+              <folding>
+                <element signature="e#3961#4182#0" expanded="true" />
+                <element signature="e#4181#4182#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,41 +138,65 @@
       <file leaf-file-name="ServerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ServerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3896103">
-              <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4822335">
+              <caret line="154" column="70" selection-start-line="154" selection-start-column="70" selection-end-line="154" selection-end-column="70" />
               <folding>
-                <element signature="e#4549#7348#0" expanded="true" />
-                <element signature="e#7347#7348#0" expanded="true" />
-                <element signature="e#8309#11696#0" expanded="true" />
-                <element signature="e#9197#11280#0" expanded="true" />
-                <element signature="e#10187#10214#1" expanded="true" />
-                <element signature="e#11279#11280#0" expanded="true" />
-                <element signature="e#11338#11586#0" expanded="true" />
-                <element signature="e#11585#11586#0" expanded="true" />
-                <element signature="e#11695#11696#0" expanded="true" />
-                <element signature="e#11894#12100#0" expanded="true" />
-                <element signature="e#12099#12100#0" expanded="true" />
-                <element signature="e#14299#14300#0" expanded="true" />
-                <element signature="e#14343#14344#0" expanded="true" />
+                <element signature="method#setColorCars#0;class#ServerTest#0" expanded="false" />
+                <element signature="e#3503#3537#0" expanded="false" />
+                <element signature="e#9703#11728#0" expanded="true" />
+                <element signature="e#10693#10720#1" expanded="true" />
+                <element signature="e#11727#11728#0" expanded="true" />
+                <element signature="e#11786#12034#0" expanded="true" />
+                <element signature="e#12033#12034#0" expanded="true" />
+                <element signature="e#12282#12496#0" expanded="true" />
+                <element signature="e#12495#12496#0" expanded="true" />
+                <element signature="class#GettingInfo#0;class#ServerTest#0" expanded="false" />
+                <element signature="e#15623#15624#0" expanded="true" />
+                <element signature="e#15674#15675#0" expanded="true" />
+                <element signature="method#onTouch#0;class#ServerTest#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SmartParking/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="27.931034">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Translations Editor" pinned="false" current-in-tab="false">
+        <entry file="android-dummy:///home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/Translations Editor">
+          <provider selected="true" editor-type-id="string-resource-editor">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="kolco_map1.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SmartParking/res/layout/kolco_map1.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile_vertical" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -146,7 +204,7 @@
         <option value="aleksei" />
       </list>
     </option>
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -3014,7 +3072,6 @@
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ConnectionDetector.java" />
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/DistanceBackgroundView.java" />
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/Garag500.java" />
-        <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/GettingInfo.java" />
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/GooglePlaceActivity.java" />
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/JSONWorking.java" />
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/Kolco.java" />
@@ -3029,6 +3086,8 @@
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/SinglePlaceActivity.java" />
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/SPMapActivity.java" />
         <option value="$PROJECT_DIR$/SmartParking/res/layout/kolco_map1.xml" />
+        <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/GettingInfo.java" />
+        <option value="$PROJECT_DIR$/SmartParking/res/layout/alert_wait.xml" />
         <option value="$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ServerTest.java" />
       </list>
     </option>
@@ -3074,6 +3133,46 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartParking_ITL-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartParking_ITL-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3090,6 +3189,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="SmartParking" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartParking_ITL-master" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartParking" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3162,46 +3279,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="com" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmartParking_ITL-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmartParking_ITL-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -3478,44 +3555,93 @@
       <option name="project" value="LOCAL" />
       <updated>1449344572461</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Syncing to server is now in AsyncTask">
+      <created>1449682954617</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1449682954617</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5797101" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39130434" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5030303" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34621578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30917874" sideWeight="0.5272727" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30756843" sideWeight="0.47272727" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5030303" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34621578" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30917874" sideWeight="0.5272727" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30756843" sideWeight="0.47272727" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2590909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="124" width="1166" height="544" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="124" width="1166" height="544" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="100" y="124" width="1166" height="544" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39130434" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5030303" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34621578" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30917874" sideWeight="0.5272727" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2590909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30756843" sideWeight="0.47272727" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -3544,39 +3670,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="41" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="SmartParking">
+        <watch expression="(LinearLayout) getLayoutInflater().inflate(R.layout.alert_wait, null)" language="JAVA" custom="" />
+        <watch expression="ad1" language="JAVA" custom="" />
+        <watch expression="ad1.dismiss()" language="JAVA" custom="" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SmartParking/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values-v23/values-v23.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.30508474">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartParking/res/values-v11/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartParking/res/values-v14/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24390244">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartParking/build/intermediates/exploded-aar/SmartParking_ITL-master/google-play-services_lib/unspecified/res/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37058824">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SmartParking/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3387534">
@@ -3665,13 +3769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/GettingInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -3864,23 +3961,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SmartParking/res/layout/server_test.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/android-sdk-linux/platforms/android-21/android.jar!/android/view/MotionEvent.class">
@@ -3891,42 +3980,89 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SmartParking/res/layout/kolco_map1.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/android-sdk-linux/platforms/android-21/android.jar!/android/os/AsyncTask.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2947977">
           <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SmartParking/res/layout/alert_dialog.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.709678">
+          <caret line="15" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SmartParking/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="27.931034">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="android-dummy:///home/aleksei/AndroidStudioProjects/SmartParking_ITL-AS/SmartParking/Translations Editor">
+      <provider selected="true" editor-type-id="string-resource-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="140" column="37" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
+          <folding>
+            <element signature="e#3961#4182#0" expanded="true" />
+            <element signature="e#4181#4182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SmartParking/res/layout/alert_wait.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056782335">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+          <folding>
+            <element signature="e#786#807#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SmartParking/src/com/tim/smartparking/ServerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3896103">
-          <caret line="331" column="0" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4822335">
+          <caret line="154" column="70" selection-start-line="154" selection-start-column="70" selection-end-line="154" selection-end-column="70" />
           <folding>
-            <element signature="e#4549#7348#0" expanded="true" />
-            <element signature="e#7347#7348#0" expanded="true" />
-            <element signature="e#8309#11696#0" expanded="true" />
-            <element signature="e#9197#11280#0" expanded="true" />
-            <element signature="e#10187#10214#1" expanded="true" />
-            <element signature="e#11279#11280#0" expanded="true" />
-            <element signature="e#11338#11586#0" expanded="true" />
-            <element signature="e#11585#11586#0" expanded="true" />
-            <element signature="e#11695#11696#0" expanded="true" />
-            <element signature="e#11894#12100#0" expanded="true" />
-            <element signature="e#12099#12100#0" expanded="true" />
-            <element signature="e#14299#14300#0" expanded="true" />
-            <element signature="e#14343#14344#0" expanded="true" />
+            <element signature="method#setColorCars#0;class#ServerTest#0" expanded="false" />
+            <element signature="e#3503#3537#0" expanded="false" />
+            <element signature="e#9703#11728#0" expanded="true" />
+            <element signature="e#10693#10720#1" expanded="true" />
+            <element signature="e#11727#11728#0" expanded="true" />
+            <element signature="e#11786#12034#0" expanded="true" />
+            <element signature="e#12033#12034#0" expanded="true" />
+            <element signature="e#12282#12496#0" expanded="true" />
+            <element signature="e#12495#12496#0" expanded="true" />
+            <element signature="class#GettingInfo#0;class#ServerTest#0" expanded="false" />
+            <element signature="e#15623#15624#0" expanded="true" />
+            <element signature="e#15674#15675#0" expanded="true" />
+            <element signature="method#onTouch#0;class#ServerTest#0" expanded="false" />
           </folding>
         </state>
       </provider>

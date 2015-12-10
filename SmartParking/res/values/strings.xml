@@ -115,5 +115,6 @@
     <string name="type_here">Type here</string>
     <string name="save">Save</string>
     <string name="e_refresh">Refresh</string>
+    <string name="please_wait">Пожалуйста, подождите...</string>
 
 </resources>

@@ -344,6 +344,7 @@
     <string name="phone">Телефон:</string>
     <string name="place_error">Ошибка мест</string>
     <string name="place_not_found">Жаль, никаких мест не найдено</string>
+    <string name="please_wait">Пожалуйста, подождите...</string>
     <string name="pobeda">40 лет Победы, 52Б</string>
     <string name="query_limit">Жаль, но тайм-аут подключения к Google Places</string>
     <string name="refresh">Обновить</string>
