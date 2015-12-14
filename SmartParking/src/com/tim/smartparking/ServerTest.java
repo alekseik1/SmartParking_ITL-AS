@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,14 +36,66 @@ import java.util.concurrent.TimeoutException;
 
 public class ServerTest extends Activity {
 
+    private static final String LOG_TAG = "SP";
     public static String s = "";
-    public static AlertDialog ad1;
+    public static int parkPlace;
+    public static long parkTime;
     private static int count_of_cars = 10;
+    private static AlertDialog.Builder ad;
+    private static AlertDialog ald2;
     String web_site = "http://www.testing44.rurs.net/"; // then we will change it
     private int id = -1;
-    public static int parkPlace;
-    private static final String LOG_TAG = "SP";
 
+    {/*@Override
+    public boolean onTouch(View v, MotionEvent event) {
+        // TODO Auto-generated method stub
+
+        //Toast.makeText(ServerTest.this, (int) v.getId(), Toast.LENGTH_SHORT).show();
+        //Log.e("sp", String.valueOf(R.id.spiv1));
+
+        /*if (v.getId() == R.id.spiv1) {
+            // Передвижение машинки by Малик
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                if (!down) {
+                    down = true;
+                    ins = System.currentTimeMillis();
+                    //Toast.makeText(ServerTest.this, (int) System.currentTimeMillis(), Toast.LENGTH_SHORT).show();
+                } else {
+                    long now = System.currentTimeMillis();
+                    if ((now - ins) <= 500) {
+                        float x = event.getX();
+                        float y = event.getY();
+                        //Toast.makeText(ServerTest.this, (int) System.currentTimeMillis() + "out", Toast.LENGTH_SHORT).show();
+
+                        LayoutParams lp = new LayoutParams(findViewById(R.id.hel).getLayoutParams());
+                        lp.leftMargin = (int) x;
+                        lp.topMargin = (int) y;
+                        findViewById(R.id.hel).setLayoutParams(lp);
+                        findViewById(R.id.hel).setVisibility(View.VISIBLE);
+
+
+                        SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+                        SharedPreferences.Editor editor = storage.edit();
+                        editor.putInt("x", (int) x);
+                        editor.putInt("y", (int) y);
+                        editor.commit();
+
+
+                        down = false;
+                        ins = 0;
+                    } else {
+                        down = true;
+                        ins = now;
+                    }
+
+				}
+            }
+        }
+
+
+        return false;
+    }*/
+    }
 
 	  private void setColorCars(String s) {
 
@@ -92,6 +145,14 @@ public class ServerTest extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kolco_map1);
 
+        ad = new AlertDialog.Builder(this);
+
+        // Тут создаются AlertDialog'и
+        ad.setPositiveButton("", null);
+        ad.setNegativeButton("", null);
+        ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
+        ald2 = ad.create();
+
         //findViewById(R.id.spiv1).setOnTouchListener(this);
         /*findViewById(R.id.hel).setOnClickListener(new OnClickListener() {
 
@@ -119,14 +180,8 @@ public class ServerTest extends Activity {
 				// TODO Auto-generated method stub
 				new ParseTask().execute();
 			}
-        	
-        };*/ }
 
-        AlertDialog.Builder ad = new AlertDialog.Builder(ServerTest.this);
-        ad.setPositiveButton("", null);
-        ad.setNegativeButton("", null);
-        ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
-        ad1 = ad.create();
+        };*/ }
         Log.d(LOG_TAG, "refresh alert dialog is ready");
 
         SharedPreferences storage = this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
@@ -314,9 +369,7 @@ public class ServerTest extends Activity {
 
             @Override
 			public void onClick(View v) {
-                ad1.show();
-                get_place();
-                ad1.dismiss();
+                refresh();
                 // TODO Auto-generated method stub
 
             }
@@ -325,23 +378,27 @@ public class ServerTest extends Activity {
 
     protected void driveAway(int pos) {
         Log.d(LOG_TAG, "Driving away");
+        String thank = "Вы уехали с места " + parkPlace +". Нажмите сюда, чтобы перейти к оплате.";
+        Notification.Builder nb = new Notification.Builder(getApplicationContext());
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        nm.cancel(5);
+        nb.setOngoing(true)
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentText(thank)
+                .setContentTitle("Smart Parking")
+                .setWhen(System.currentTimeMillis())
+                .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), OplataActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
+        Notification notif = new Notification.BigTextStyle(nb).bigText(thank).build();
+        parkTime = System.currentTimeMillis();
+        nm.notify(5, notif);
     }
 
 	protected void refresh() {
-        AlertDialog.Builder ad = new AlertDialog.Builder(ServerTest.this);
-        AlertDialog ad1 = null;
-        ad.setPositiveButton("", null);
-        ad.setNegativeButton("", null);
         Log.d(LOG_TAG, "refresh started");
-        ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
-        try {
-            ad1 = ad.create();
-            ad1.show();
-        } catch (NullPointerException e) {
-            Log.d(LOG_TAG, "Unable to create alert dialog wait");
-        }
+        ald2.show();
         get_place();
-        ad1.dismiss();
+        ald2.dismiss();
         // TODO Auto-generated method stub
 
     }
@@ -410,56 +467,6 @@ public class ServerTest extends Activity {
 
         setColorCars(scolor);
     }
-
-    {/*@Override
-    public boolean onTouch(View v, MotionEvent event) {
-        // TODO Auto-generated method stub
-
-        //Toast.makeText(ServerTest.this, (int) v.getId(), Toast.LENGTH_SHORT).show();
-        //Log.e("sp", String.valueOf(R.id.spiv1));
-
-        /*if (v.getId() == R.id.spiv1) {
-            // Передвижение машинки by Малик
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                if (!down) {
-                    down = true;
-                    ins = System.currentTimeMillis();
-                    //Toast.makeText(ServerTest.this, (int) System.currentTimeMillis(), Toast.LENGTH_SHORT).show();
-                } else {
-                    long now = System.currentTimeMillis();
-                    if ((now - ins) <= 500) {
-                        float x = event.getX();
-                        float y = event.getY();
-                        //Toast.makeText(ServerTest.this, (int) System.currentTimeMillis() + "out", Toast.LENGTH_SHORT).show();
-
-                        LayoutParams lp = new LayoutParams(findViewById(R.id.hel).getLayoutParams());
-                        lp.leftMargin = (int) x;
-                        lp.topMargin = (int) y;
-                        findViewById(R.id.hel).setLayoutParams(lp);
-                        findViewById(R.id.hel).setVisibility(View.VISIBLE);
-
-
-                        SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
-                        SharedPreferences.Editor editor = storage.edit();
-                        editor.putInt("x", (int) x);
-                        editor.putInt("y", (int) y);
-                        editor.commit();
-
-
-                        down = false;
-                        ins = 0;
-                    } else {
-                        down = true;
-                        ins = now;
-                    }
-
-				}
-            }
-        }
-
-
-        return false;
-    }*/ }
 
     class GettingInfo extends AsyncTask<String, Void, String> {
 
@@ -533,4 +540,5 @@ public class ServerTest extends Activity {
             super.onPostExecute(result);
         }
     }
+
 }
