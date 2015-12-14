@@ -188,15 +188,17 @@ public class ServerTest extends Activity {
                           Toast.makeText(ServerTest.this, "Saved", Toast.LENGTH_SHORT).show();
                           Notification.Builder nb = new Notification.Builder(getApplicationContext());
                           NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                          SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+                          String push = "Вы припарковались на месте " + v.getTag() + ". Время парковки: " + sdf.format(System.currentTimeMillis());
                           nm.cancel(5);
-                          SimpleDateFormat sdf = new SimpleDateFormat();
                           nb.setOngoing(true)
                                   .setSmallIcon(R.drawable.ic_launcher)
-                                  .setContentText("Вы припарковались на месте " + v.getTag() + ". Время парковки: " + sdf.format(System.currentTimeMillis()))
+                                  .setContentText(push)
                                   .setContentTitle("Smart Parking")
                                   .setWhen(System.currentTimeMillis())
                                   .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), ServerTest.class), PendingIntent.FLAG_UPDATE_CURRENT));
-                          nm.notify(5, nb.build());
+                          Notification notif = new Notification.BigTextStyle(nb).bigText(push).build();
+                          nm.notify(5, notif);
                           refresh();
                           return false;
                       } else {
