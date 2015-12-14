@@ -18,7 +18,6 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,30 +39,26 @@ public class ServerTest extends Activity {
     public static AlertDialog ad1;
     private static int count_of_cars = 10;
     String web_site = "http://www.testing44.rurs.net/"; // then we will change it
-    private int sch = 0;
     private int id = -1;
-    private double TimeIn = 0;
-    private boolean down = false;
-
-	private long ins;
-	
+    public static int parkPlace;
+    private static final String LOG_TAG = "SP";
 
 
 	  private void setColorCars(String s) {
-		  
+
 		  RelativeLayout rl = (RelativeLayout)findViewById(R.id.batya);
 		  count_of_cars = rl.getChildCount();
-		  
+
 		  while(count_of_cars<s.length())
 			  s += "0";
 		  for(int i = 0, v = 0; i < Math.min(count_of_cars, s.length()) && v<count_of_cars; v++) {
-			  
+
 			  if(!(rl.getChildAt(v) instanceof TextView))
 			  {
 				//  Log.e("view", String.valueOf(rl.getChildAt(v)));
 				  continue;
 			  }
-			  
+
 			  if(rl.getChildAt(v) instanceof Button)
 			  {
 				//  Log.e("view", String.valueOf(rl.getChildAt(v)));
@@ -82,30 +77,23 @@ public class ServerTest extends Activity {
                   }
               }
 			  i++;
-			  
-			  
+
+
 		  }
           try {
               findViewById(R.id.hel).setBackgroundResource(R.drawable.redcar);
           } catch (Exception e) {
               e.printStackTrace();
           }
-
-          if(id!=-1)
-              try {
-                  findViewById(id).setBackgroundResource(R.drawable.bluecar);
-              } catch (Exception e) {
-                  e.printStackTrace();
-              }
       }
- 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kolco_map1);
 
         //findViewById(R.id.spiv1).setOnTouchListener(this);
-        findViewById(R.id.hel).setOnClickListener(new OnClickListener() {
+        /*findViewById(R.id.hel).setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -119,12 +107,12 @@ public class ServerTest extends Activity {
                 editor.putInt("rotation", (int) v.getRotation());
                 editor.commit();
             }
-        });
+        });*/
         //setContentView(R.layout.kolco_map);
-        
-        
-        
-       /* OnClickListener ocl = new OnClickListener() {
+
+
+
+        { /* OnClickListener ocl = new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -132,25 +120,25 @@ public class ServerTest extends Activity {
 				new ParseTask().execute();
 			}
         	
-        };*/
+        };*/ }
 
         AlertDialog.Builder ad = new AlertDialog.Builder(ServerTest.this);
         ad.setPositiveButton("", null);
         ad.setNegativeButton("", null);
         ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
         ad1 = ad.create();
-        Log.d("Update", "refresh alert dialog is ready");
+        Log.d(LOG_TAG, "refresh alert dialog is ready");
 
         SharedPreferences storage = this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
 		final String name = storage.getString("name", "Malik");
 		id = storage.getInt("id", -1);
 		Log.e("eclipse", "eclispe");
-		
+
 		 RelativeLayout rl = (RelativeLayout)findViewById(R.id.batya);
 		 count_of_cars = rl.getChildCount();
-		  
+
 		  for(int i = 0; i <count_of_cars; i++) {
-			  
+
 			  if(!(rl.getChildAt(i) instanceof TextView))
 			  {
 				  continue;
@@ -177,11 +165,6 @@ public class ServerTest extends Activity {
                           id = v.getId();
                           editor.commit();
                           try {
-                              v.setBackgroundResource(R.drawable.bluecar);
-                          } catch (Exception e) {
-                              e.printStackTrace();
-                          }
-                          try {
                               ((TextView) v).setText(name);
                           } catch (NullPointerException e) {
                           }
@@ -189,7 +172,8 @@ public class ServerTest extends Activity {
                           Notification.Builder nb = new Notification.Builder(getApplicationContext());
                           NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                           SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-                          String push = "Вы припарковались на месте " + v.getTag() + ". Время парковки: " + sdf.format(System.currentTimeMillis());
+                          parkPlace = Integer.parseInt(v.getTag().toString());
+                          String push = "Вы припарковались на месте " + parkPlace + ". Время парковки: " + sdf.format(System.currentTimeMillis());
                           nm.cancel(5);
                           nb.setOngoing(true)
                                   .setSmallIcon(R.drawable.ic_launcher)
@@ -204,7 +188,18 @@ public class ServerTest extends Activity {
                       } else {
                           NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                           nm.cancel(5);
-                          v.setBackgroundResource(R.drawable.redcar);
+                          SharedPreferences storage = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+                          SharedPreferences.Editor editor = storage.edit();
+                          int hd = storage.getInt("id", -1);
+                          if (hd != -1) {
+
+                              try {
+                                  ((TextView) findViewById(hd)).setText("");
+                              } catch (NullPointerException e) {
+                              }
+                          }
+                          editor.commit();
+                          driveAway(parkPlace);
                           get_place();
                           return false;
                       }
@@ -214,11 +209,6 @@ public class ServerTest extends Activity {
 
 
         if (id != -1) {
-            try {
-                findViewById(id).setBackgroundResource(R.drawable.bluecar);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             try {
 				((TextView)findViewById(id)).setText(name);
 			} catch (NullPointerException e) {
@@ -238,7 +228,7 @@ public class ServerTest extends Activity {
         }
 
 
-        /*findViewById(R.id.imageView1).setOnClickListener(new OnClickListener() {
+        { /*findViewById(R.id.imageView1).setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -316,7 +306,7 @@ public class ServerTest extends Activity {
                     sch = 0;
                 }
 
-            }*/
+            }*/ }
 
         // Обновить статус всех мест
         Button refresh = (Button) findViewById(R.id.refresh);
@@ -333,18 +323,22 @@ public class ServerTest extends Activity {
 		});
     }
 
+    protected void driveAway(int pos) {
+        Log.d(LOG_TAG, "Driving away");
+    }
+
 	protected void refresh() {
         AlertDialog.Builder ad = new AlertDialog.Builder(ServerTest.this);
         AlertDialog ad1 = null;
         ad.setPositiveButton("", null);
         ad.setNegativeButton("", null);
-        Log.d("Update", "refresh started");
+        Log.d(LOG_TAG, "refresh started");
         ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
         try {
             ad1 = ad.create();
             ad1.show();
         } catch (NullPointerException e) {
-            Log.d("Update", "Unable to create alert dialog wait");
+            Log.d(LOG_TAG, "Unable to create alert dialog wait");
         }
         get_place();
         ad1.dismiss();
@@ -417,7 +411,7 @@ public class ServerTest extends Activity {
         setColorCars(scolor);
     }
 
-    /*@Override
+    {/*@Override
     public boolean onTouch(View v, MotionEvent event) {
         // TODO Auto-generated method stub
 
@@ -465,7 +459,7 @@ public class ServerTest extends Activity {
 
 
         return false;
-    }*/
+    }*/ }
 
     class GettingInfo extends AsyncTask<String, Void, String> {
 
