@@ -42,6 +42,7 @@ public class ServerTest extends Activity {
     private int id = -1;
     public static int parkPlace;
     private static final String LOG_TAG = "SP";
+    public static long parkTime;
 
 
 	  private void setColorCars(String s) {
@@ -325,6 +326,20 @@ public class ServerTest extends Activity {
 
     protected void driveAway(int pos) {
         Log.d(LOG_TAG, "Driving away");
+        String thank = "Вы уехали с места " + parkPlace +". Нажмите сюда, чтобы перейти к оплате.";
+        Notification.Builder nb = new Notification.Builder(getApplicationContext());
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        nm.cancel(5);
+        nb.setOngoing(true)
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentText(thank)
+                .setContentTitle("Smart Parking")
+                .setWhen(System.currentTimeMillis())
+                .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), OplataActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
+        Notification notif = new Notification.BigTextStyle(nb).bigText(thank).build();
+        parkTime = System.currentTimeMillis();
+        nm.notify(5, notif);
     }
 
 	protected void refresh() {
