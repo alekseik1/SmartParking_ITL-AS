@@ -6,21 +6,16 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,13 +27,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class ServerTest extends Activity implements OnTouchListener {
+public class ServerTest extends Activity {
 
     public static String s = "";
     public static AlertDialog ad1;
@@ -108,7 +104,7 @@ public class ServerTest extends Activity implements OnTouchListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kolco_map1);
 
-        findViewById(R.id.spiv1).setOnTouchListener(this);
+        //findViewById(R.id.spiv1).setOnTouchListener(this);
         findViewById(R.id.hel).setOnClickListener(new OnClickListener() {
 
             @Override
@@ -193,9 +189,10 @@ public class ServerTest extends Activity implements OnTouchListener {
                           Notification.Builder nb = new Notification.Builder(getApplicationContext());
                           NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                           nm.cancel(5);
+                          SimpleDateFormat sdf = new SimpleDateFormat();
                           nb.setOngoing(true)
                                   .setSmallIcon(R.drawable.ic_launcher)
-                                  .setContentText("Вы припарковались на месте " + v.getTag())
+                                  .setContentText("Вы припарковались на месте " + v.getTag() + ". Время парковки: " + sdf.format(System.currentTimeMillis()))
                                   .setContentTitle("Smart Parking")
                                   .setWhen(System.currentTimeMillis())
                                   .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), ServerTest.class), PendingIntent.FLAG_UPDATE_CURRENT));
@@ -226,7 +223,7 @@ public class ServerTest extends Activity implements OnTouchListener {
 				e.printStackTrace();
 			}
 
-			SharedPreferences storage1 = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
+			/*SharedPreferences storage1 = ServerTest.this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
             LayoutParams lp = new LayoutParams(findViewById(R.id.hel).getLayoutParams());
             lp.leftMargin = storage1.getInt("x", 0);
             lp.topMargin = storage1.getInt("y", 0);
@@ -235,10 +232,11 @@ public class ServerTest extends Activity implements OnTouchListener {
 
             if (id == R.id.hel)
                 findViewById(R.id.hel).setVisibility(View.VISIBLE);
+                */
         }
 
 
-        findViewById(R.id.imageView1).setOnClickListener(new OnClickListener() {
+        /*findViewById(R.id.imageView1).setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -316,8 +314,7 @@ public class ServerTest extends Activity implements OnTouchListener {
                     sch = 0;
                 }
 
-            }
-        });
+            }*/
 
         // Обновить статус всех мест
         Button refresh = (Button) findViewById(R.id.refresh);
@@ -418,14 +415,14 @@ public class ServerTest extends Activity implements OnTouchListener {
         setColorCars(scolor);
     }
 
-    @Override
+    /*@Override
     public boolean onTouch(View v, MotionEvent event) {
         // TODO Auto-generated method stub
 
         //Toast.makeText(ServerTest.this, (int) v.getId(), Toast.LENGTH_SHORT).show();
         //Log.e("sp", String.valueOf(R.id.spiv1));
 
-        if (v.getId() == R.id.spiv1) {
+        /*if (v.getId() == R.id.spiv1) {
             // Передвижение машинки by Малик
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 if (!down) {
@@ -466,7 +463,7 @@ public class ServerTest extends Activity implements OnTouchListener {
 
 
         return false;
-    }
+    }*/
 
     class GettingInfo extends AsyncTask<String, Void, String> {
 
