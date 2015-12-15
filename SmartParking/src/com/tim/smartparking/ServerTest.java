@@ -45,6 +45,7 @@ public class ServerTest extends Activity {
     private static AlertDialog ald2;
     String web_site = "http://www.testing44.rurs.net/"; // then we will change it
     private int id = -1;
+<<<<<<< HEAD
 
     {/*@Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -91,6 +92,11 @@ public class ServerTest extends Activity {
 				}
             }
         }
+=======
+    public static int parkPlace;
+    private static final String LOG_TAG = "SP";
+    public static long parkTime;
+>>>>>>> a414b551bdb8c1eeb773c7f9612c72a49c47ccb8
 
 
         return false;
