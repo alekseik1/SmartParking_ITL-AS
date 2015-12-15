@@ -20,13 +20,10 @@ public class OplataActivity extends Activity {
         TextView tv1 = (TextView) findViewById(R.id.textView);
         TextView tv2 = (TextView) findViewById(R.id.textView7);
         TextView tv3 = (TextView) findViewById(R.id.textView8);
-<<<<<<< HEAD
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String stayTime = sdf.format(System.currentTimeMillis() - ServerTest.parkTime - 3600 * 1000 * 3);
-=======
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         String stayTime = sdf.format(System.currentTimeMillis() - ServerTest.parkTime);
->>>>>>> a414b551bdb8c1eeb773c7f9612c72a49c47ccb8
         tv1.setText(stayTime);
     }
 }
