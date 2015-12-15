@@ -22,8 +22,6 @@ public class OplataActivity extends Activity {
         TextView tv3 = (TextView) findViewById(R.id.textView8);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String stayTime = sdf.format(System.currentTimeMillis() - ServerTest.parkTime - 3600 * 1000 * 3);
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-        String stayTime = sdf.format(System.currentTimeMillis() - ServerTest.parkTime);
         tv1.setText(stayTime);
     }
 }
