@@ -2,7 +2,9 @@ package com.tim.smartparking;
 
 import android.app.Activity;
 import android.app.NotificationManager;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -18,9 +20,10 @@ public class OplataActivity extends Activity {
         setContentView(R.layout.oplata_info);
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         nm.cancel(5);
-        //NfcAdapter adapter = NfcAdapter.getDefaultAdapter(this);
+        NfcAdapter adapter = NfcAdapter.getDefaultAdapter(this);
         TextView tv1 = (TextView) findViewById(R.id.textView);
         TextView tv2 = (TextView) findViewById(R.id.textView7);
+        tv3 = (TextView) findViewById(R.id.textView8);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         long time = System.currentTimeMillis() - ServerTest.parkTime - 3600 * 1000 * 3;
         String stayTime = sdf.format(time);
@@ -29,11 +32,10 @@ public class OplataActivity extends Activity {
         if (Integer.parseInt(sdf.format(time)) < 1) {
             tv2.setText("Первый час на парковке бесплатен!");
             tv3.setText("");
+            Log.d("Update", "Worked fine");
         } else {
             tv2.setText("Стоимость: " + Integer.parseInt(sdf.format(time)) * 100);
         }
-        tv2.setText("Стоимость: " + Integer.parseInt(sdf.format(time)) * 100);
-
     }
 
 }
