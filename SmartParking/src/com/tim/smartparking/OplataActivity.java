@@ -29,12 +29,15 @@ public class OplataActivity extends Activity {
         String stayTime = sdf.format(time);
         sdf = new SimpleDateFormat("HH");
         tv1.setText("Время стоянки: " + stayTime);
+        Log.d("Server","stayTime: "+stayTime);
         if (Integer.parseInt(sdf.format(time)) < 1) {
             tv2.setText("Первый час на парковке бесплатен!");
             tv3.setText("");
             Log.d("Update", "Worked fine");
         } else {
-            tv2.setText("Стоимость: " + Integer.parseInt(sdf.format(time)) * 100);
+            int price = Integer.parseInt(sdf.format(time)) * 100;
+            tv2.setText("Стоимость: " + price);
+            Log.d("Server","Price: "+ price);
         }
     }
 

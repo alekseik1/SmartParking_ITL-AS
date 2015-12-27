@@ -5,11 +5,13 @@ import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Settings.Secure;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,6 +36,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+
 public class ServerTest extends Activity {
 
     private static final String LOG_TAG = "SP";
@@ -46,6 +49,11 @@ public class ServerTest extends Activity {
     private static AlertDialog ald2;
     String web_site = "http://www.testing44.rurs.net/"; // then we will change it
     private int id = -1;
+    private ProgressDialog pDialog;
+    JSONParser jsonParser = new JSONParser();
+    private static String url_create_space = "http://testing44.rurs.net/create_space.php";
+    private static final String TAG_SUCCESS = "success";
+
 
     private void setColorCars(String s) {
 
@@ -99,6 +107,10 @@ public class ServerTest extends Activity {
         ad.setView(getLayoutInflater().inflate(R.layout.alert_wait, null));
         ald2 = ad.create();
         Log.d(LOG_TAG, "refresh alert dialog is ready");
+        //узнаём android ID
+        String android_id = Secure.getString(this.getContentResolver(),
+                Secure.ANDROID_ID);
+        Log.d("Server", "Android ID : " + android_id);
 
         SharedPreferences storage = this.getSharedPreferences("Configuration", MODE_MULTI_PROCESS);
 		final String name = storage.getString("name", "Malik");
@@ -141,6 +153,7 @@ public class ServerTest extends Activity {
                           SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
                           parkPlace = Integer.parseInt(v.getTag().toString());
                           String push = "Вы припарковались на месте " + parkPlace + ". Время парковки: " + sdf.format(System.currentTimeMillis());
+                          Log.d("Server", "parkPlace : " + parkPlace);
                           nm.cancel(5);
                           nb.setOngoing(true)
                                   .setSmallIcon(R.drawable.ic_launcher)
@@ -194,6 +207,7 @@ public class ServerTest extends Activity {
             }
 		});
     }
+
 
     protected void driveAway(int pos) {
         Log.d(LOG_TAG, "Driving away");
@@ -318,6 +332,8 @@ public class ServerTest extends Activity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
         }
+
+
     }
 
 }
