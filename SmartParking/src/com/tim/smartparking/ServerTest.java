@@ -21,6 +21,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,6 +37,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -53,6 +59,8 @@ public class ServerTest extends Activity {
     JSONParser jsonParser = new JSONParser();
     private static String url_create_space = "http://testing44.rurs.net/create_space.php";
     private static final String TAG_SUCCESS = "success";
+    private static Context context;
+    private static String android_id;
 
 
     private void setColorCars(String s) {
@@ -108,7 +116,7 @@ public class ServerTest extends Activity {
         ald2 = ad.create();
         Log.d(LOG_TAG, "refresh alert dialog is ready");
         //узнаём android ID
-        String android_id = Secure.getString(this.getContentResolver(),
+        android_id = Secure.getString(this.getContentResolver(),
                 Secure.ANDROID_ID);
         Log.d("Server", "Android ID : " + android_id);
 
@@ -164,6 +172,8 @@ public class ServerTest extends Activity {
                           Notification notif = new Notification.BigTextStyle(nb).bigText(push).build();
                           nm.notify(5, notif);
                           parkTime = System.currentTimeMillis();
+                          new CreateNewProduct().execute();
+                          Log.d("Server","parkTime: "+parkTime);
                           refresh();
                           return false;
                       } else {
@@ -282,6 +292,8 @@ public class ServerTest extends Activity {
 
     class GettingInfo extends AsyncTask<String, Void, String> {
 
+
+
         public GettingInfo(Context applicationContext) {
             // TODO Auto-generated constructor stub
             super();
@@ -333,6 +345,63 @@ public class ServerTest extends Activity {
             super.onPostExecute(result);
         }
 
+
+    }
+
+    class CreateNewProduct extends AsyncTask<String, String, String> {
+
+        /**
+         * Перед согданием в фоновом потоке показываем прогресс диалог
+         **/
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(ServerTest.this);
+            pDialog.setMessage("Создание места...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+            pDialog.dismiss();
+        }
+
+        /**
+         * Создание продукта
+         **/
+        protected String doInBackground(String[] args) {
+
+            // Заполняем параметры
+            String parkPlaceStr = Integer.toString(parkPlace); //переводим из int в string
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("android_id", android_id));
+            params.add(new BasicNameValuePair("parkPlace", parkPlaceStr));
+
+            // получаем JSON объект
+            JSONObject json = jsonParser.makeHttpRequest(url_create_space, "POST", params);
+
+            Log.d("Create Response", json.toString());
+
+            try {
+                int success = json.getInt(TAG_SUCCESS);
+
+                if (success == 1) {
+                    // успех ёпт
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Успешно припорковались!", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        /**
+         * После оконачния скрываем прогресс диалог
+         **/
+        protected void onPostExecute(String file_url) {
+            pDialog.dismiss();
+        }
 
     }
 
